@@ -27,6 +27,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openapitools.codegen.CodegenConstants.ENUM_PROPERTY_NAMING_TYPE;
 import org.openapitools.codegen.CodegenConstants.MODEL_PROPERTY_NAMING_TYPE;
+import org.openapitools.codegen.CodegenConstants.PARAM_PROPERTY_NAMING_TYPE;
 import org.openapitools.codegen.*;
 import org.openapitools.codegen.meta.features.*;
 import org.openapitools.codegen.utils.ModelUtils;
@@ -64,6 +65,7 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
 
     protected MODEL_PROPERTY_NAMING_TYPE modelPropertyNaming = MODEL_PROPERTY_NAMING_TYPE.original;
     protected ENUM_PROPERTY_NAMING_TYPE enumPropertyNaming = ENUM_PROPERTY_NAMING_TYPE.PascalCase;
+    protected PARAM_PROPERTY_NAMING_TYPE paramPropertyNaming = PARAM_PROPERTY_NAMING_TYPE.camelCase;
     protected Boolean supportsES6 = false;
     protected Boolean nullSafeAdditionalProps = false;
     protected HashSet<String> languageGenericTypes;
@@ -212,6 +214,10 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
             setModelPropertyNaming((String) additionalProperties.get(CodegenConstants.MODEL_PROPERTY_NAMING));
         }
 
+        if (additionalProperties.containsKey(CodegenConstants.PARAM_PROPERTY_NAMING)) {
+            setParamPropertyNaming((String) additionalProperties.get(CodegenConstants.PARAM_PROPERTY_NAMING));
+        }
+
         if (additionalProperties.containsKey(CodegenConstants.SUPPORTS_ES6)) {
             setSupportsES6(Boolean.valueOf(additionalProperties.get(CodegenConstants.SUPPORTS_ES6).toString()));
             additionalProperties.put("supportsES6", getSupportsES6());
@@ -324,7 +330,7 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
             name = "_u";
         }
 
-        name = camelize(name, true);
+        name = getNameUsingParamPropertyNaming(name);
         name = toSafeIdentifier(name);
 
         return name;
@@ -589,8 +595,43 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
         }
     }
 
+    public void setParamPropertyNaming(String naming) {
+        try {
+            paramPropertyNaming = PARAM_PROPERTY_NAMING_TYPE.valueOf(naming);
+        } catch (IllegalArgumentException e) {
+            String values = Stream.of(PARAM_PROPERTY_NAMING_TYPE.values())
+                    .map(value -> "'" + value.name() + "'")
+                    .collect(Collectors.joining(", "));
+
+            String msg = String.format(Locale.ROOT, "Invalid param property naming '%s'. Must be one of %s.", naming, values);
+            throw new IllegalArgumentException(msg);
+        }
+    }
+
     public MODEL_PROPERTY_NAMING_TYPE getModelPropertyNaming() {
         return modelPropertyNaming;
+    }
+
+    public PARAM_PROPERTY_NAMING_TYPE getParamPropertyNaming() {
+        return paramPropertyNaming;
+    }
+
+    private String getNameUsingParamPropertyNaming(String name) {
+        switch (getParamPropertyNaming()) {
+            case original:
+                return name;
+            case camelCase:
+                return camelize(name, true);
+            case PascalCase:
+                return camelize(name);
+            case snake_case:
+                return underscore(name);
+            default:
+                throw new IllegalArgumentException("Invalid param naming '" +
+                        name + "'. Must be 'original', 'camelCase', " +
+                        "'PascalCase' or 'snake_case'");
+        }
+
     }
 
     private String getNameUsingModelPropertyNaming(String name) {
