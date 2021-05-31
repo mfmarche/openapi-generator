@@ -1450,7 +1450,12 @@ def get_allof_instances(self, model_args, constant_args):
     for allof_class in self._composed_schemas['allOf']:
 
         try:
-            allof_instance = allof_class(**model_args, **constant_args)
+            # FIX/workaround.
+            # get_allof_instances could be called from from_openapi_data or __init__
+            # of class. If it is called from _from_openapi_data, then we must not check
+            # for readOnly validation. However this method has no knowledge of the caller,
+            # so for now, use _from_openapi_data to instantiate the object.
+            allof_instance = allof_class._from_openapi_data(**model_args, **constant_args)
             composed_instances.append(allof_instance)
         except Exception as ex:
             raise ApiValueError(
