@@ -35,8 +35,17 @@
                 )
         # attribute must be set on self and composed instances
         self.set_attribute(name, value)
+        found_intersection = False
         for model_instance in self._composed_instances:
-            setattr(model_instance, name, value)
+            intersection = find_args_intersection(model_instance.__class__, {name: value})
+            if len(intersection):
+                setattr(model_instance, name, value)
+                found_intersection = True
+        if not found_intersection:
+            # we didn't find an intersection for the property, it could be an
+            # additional type, so pass it through
+            for model_instance in self._composed_instances:
+                setattr(model_instance, name, value)
         if name not in self._var_name_to_model_instances:
             # we assigned an additional property
             self.__dict__['_var_name_to_model_instances'][name] = self._composed_instances + [self]

@@ -30,3 +30,10 @@
             return name in self.__dict__
 
         return name in self.__dict__['_data_store']
+
+    def __delitem__(self, name):
+        """delete an attribute using: `del instance[attr]`"""
+        if name in self.required_properties:
+            self.__dict__.pop(name, None)
+            return
+        self.__dict__['_data_store'].pop(name, None)
