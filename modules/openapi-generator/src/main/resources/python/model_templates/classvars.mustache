@@ -60,6 +60,16 @@
 {{/optionalVars}}
     }
 
+    {{#vars}}
+    @property
+    def {{name}}(self):
+       return self.get("{{name}}")
+
+    @{{name}}.setter
+    def {{name}}(self, new_value):
+       self.{{name}} = new_value
+
+    {{/vars}}
 {{#additionalProperties}}
     @cached_property
     def additional_properties_type():

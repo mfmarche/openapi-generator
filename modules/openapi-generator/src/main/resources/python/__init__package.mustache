@@ -13,13 +13,20 @@ from {{packageName}}.configuration import Configuration
 from {{packageName}}.signing import HttpSigningConfiguration
 {{/hasHttpSignatureMethods}}
 
+{{#apiInfo}}{{#apis}}from {{apiPackage}}.{{classVarName}} import {{classname}}
+{{/apis}}{{/apiInfo}}
+
 # import exceptions
 from {{packageName}}.exceptions import OpenApiException
-from {{packageName}}.exceptions import ApiAttributeError
+#from {{packageName}}.exceptions import ApiAttributeError
 from {{packageName}}.exceptions import ApiTypeError
 from {{packageName}}.exceptions import ApiValueError
 from {{packageName}}.exceptions import ApiKeyError
 from {{packageName}}.exceptions import ApiException
+
+{{#models}}{{#model}}from {{modelPackage}}.{{classFilename}} import {{classname}}
+{{/model}}{{/models}}
+
 {{#recursionLimit}}
 
 __import__('sys').setrecursionlimit({{{.}}})
