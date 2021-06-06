@@ -1444,7 +1444,7 @@ def find_args_intersection(cls, potential_args):
     return intersected_args
 
 
-def get_allof_instances(self, model_args, constant_args):
+def get_allof_instances(self, model_args, constant_args, from_openapi_data=False):
     """
     Args:
         self: the class we are handling
@@ -1465,13 +1465,11 @@ def get_allof_instances(self, model_args, constant_args):
     for allof_class in self._composed_schemas['allOf']:
 
         try:
-            # FIX/workaround.
-            # get_allof_instances could be called from from_openapi_data or __init__
-            # of class. If it is called from _from_openapi_data, then we must not check
-            # for readOnly validation. However this method has no knowledge of the caller,
-            # so for now, use _from_openapi_data to instantiate the object.
             intersected_args = find_args_intersection(allof_class, model_args)
-            allof_instance = allof_class(**intersected_args, **constant_args)
+            if from_openapi_data:
+                allof_instance = allof_class._from_openapi_data(**intersected_args, **constant_args)
+            else:
+                allof_instance = allof_class(**intersected_args, **constant_args)
             composed_instances.append(allof_instance)
         except Exception as ex:
             raise ApiValueError(
@@ -1634,7 +1632,7 @@ def get_discarded_args(self, composed_instances, model_args):
     return discarded_args
 
 
-def validate_get_composed_info(constant_args, model_args, self):
+def validate_get_composed_info(constant_args, model_args, self, from_openapi_data=False):
     """
     For composed schemas, generate schema instances for
     all schemas in the oneOf/anyOf/allOf definition. If additional
@@ -1668,7 +1666,7 @@ def validate_get_composed_info(constant_args, model_args, self):
     """
     # create composed_instances
     composed_instances = []
-    allof_instances = get_allof_instances(self, model_args, constant_args)
+    allof_instances = get_allof_instances(self, model_args, constant_args, from_openapi_data)
     composed_instances.extend(allof_instances)
     oneof_instance = get_oneof_instance(self.__class__, model_args, constant_args)
     if oneof_instance is not None:
