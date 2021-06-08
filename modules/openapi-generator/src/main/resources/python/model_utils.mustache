@@ -1432,18 +1432,6 @@ def get_valid_classes_phrase(input_classes):
     return "is one of [{0}]".format(", ".join(all_class_names))
 
 
-def find_args_intersection(cls, potential_args):
-    intersected_args = {}
-
-    for key, value in potential_args.items():
-        if key in cls.openapi_types:
-            intersected_args[key] = value
-        elif cls.additional_properties_type and type(value) in cls.additional_properties_type:
-            #allow additional properties, if declared, to pass through
-            intersected_args[key] = value
-    return intersected_args
-
-
 def get_allof_instances(self, model_args, constant_args, from_openapi_data=False):
     """
     Args:
@@ -1465,11 +1453,10 @@ def get_allof_instances(self, model_args, constant_args, from_openapi_data=False
     for allof_class in self._composed_schemas['allOf']:
 
         try:
-            intersected_args = find_args_intersection(allof_class, model_args)
             if from_openapi_data:
-                allof_instance = allof_class._from_openapi_data(**intersected_args, **constant_args)
+                allof_instance = allof_class._from_openapi_data(**model_args, **constant_args)
             else:
-                allof_instance = allof_class(**intersected_args, **constant_args)
+                allof_instance = allof_class(**model_args, **constant_args)
             composed_instances.append(allof_instance)
         except Exception as ex:
             raise ApiValueError(
