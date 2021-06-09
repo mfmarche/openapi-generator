@@ -101,68 +101,69 @@ class PetApi(object):
                 pet
             return self.call_with_http_info(**kwargs)
 
-        self.add_pet = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'http_signature_test',
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet',
-                'operation_id': 'add_pet',
-                'http_method': 'POST',
-                'servers': [
-                    {
-                        'url': "http://petstore.swagger.io/v2",
-                        'description': "No description provided",
+        if self.add_pet is None:
+            self.add_pet = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'http_signature_test',
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet',
+                    'operation_id': 'add_pet',
+                    'http_method': 'POST',
+                    'servers': [
+                        {
+                            'url': "http://petstore.swagger.io/v2",
+                            'description': "No description provided",
+                        },
+                        {
+                            'url': "http://path-server-test.petstore.local/v2",
+                            'description': "No description provided",
+                        },
+                    ]
+                },
+                params_map={
+                    'all': [
+                        'pet',
+                    ],
+                    'required': [
+                        'pet',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
+                },
+                root_map={
+                    'validations': {
                     },
-                    {
-                        'url': "http://path-server-test.petstore.local/v2",
-                        'description': "No description provided",
+                    'allowed_values': {
                     },
-                ]
-            },
-            params_map={
-                'all': [
-                    'pet',
-                ],
-                'required': [
-                    'pet',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+                    'openapi_types': {
+                        'pet':
+                            (Pet,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'pet': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/json',
+                        'application/xml'
+                    ]
                 },
-                'openapi_types': {
-                    'pet':
-                        (Pet,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'pet': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json',
-                    'application/xml'
-                ]
-            },
-            api_client=api_client,
-            callable=__add_pet
-        )
+                api_client=api_client,
+                callable=__add_pet
+            )
 
         def __delete_pet(
             self,
@@ -230,61 +231,62 @@ class PetApi(object):
                 pet_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_pet = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet/{petId}',
-                'operation_id': 'delete_pet',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'pet_id',
-                    'api_key',
-                ],
-                'required': [
-                    'pet_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.delete_pet is None:
+            self.delete_pet = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet/{petId}',
+                    'operation_id': 'delete_pet',
+                    'http_method': 'DELETE',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'pet_id',
+                        'api_key',
+                    ],
+                    'required': [
+                        'pet_id',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'pet_id':
-                        (int,),
-                    'api_key':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'pet_id':
+                            (int,),
+                        'api_key':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'pet_id': 'petId',
+                        'api_key': 'api_key',
+                    },
+                    'location_map': {
+                        'pet_id': 'path',
+                        'api_key': 'header',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'pet_id': 'petId',
-                    'api_key': 'api_key',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'pet_id': 'path',
-                    'api_key': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__delete_pet
-        )
+                api_client=api_client,
+                callable=__delete_pet
+            )
 
         def __find_pets_by_status(
             self,
@@ -352,68 +354,69 @@ class PetApi(object):
                 status
             return self.call_with_http_info(**kwargs)
 
-        self.find_pets_by_status = _Endpoint(
-            settings={
-                'response_type': ([Pet],),
-                'auth': [
-                    'http_signature_test',
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet/findByStatus',
-                'operation_id': 'find_pets_by_status',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'status',
-                ],
-                'required': [
-                    'status',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                    'status',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.find_pets_by_status is None:
+            self.find_pets_by_status = _Endpoint(
+                settings={
+                    'response_type': ([Pet],),
+                    'auth': [
+                        'http_signature_test',
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet/findByStatus',
+                    'operation_id': 'find_pets_by_status',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
-                    ('status',): {
-
-                        "AVAILABLE": "available",
-                        "PENDING": "pending",
-                        "SOLD": "sold"
+                params_map={
+                    'all': [
+                        'status',
+                    ],
+                    'required': [
+                        'status',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                        'status',
+                    ],
+                    'validation': [
+                    ]
+                },
+                root_map={
+                    'validations': {
                     },
+                    'allowed_values': {
+                        ('status',): {
+
+                            "AVAILABLE": "available",
+                            "PENDING": "pending",
+                            "SOLD": "sold"
+                        },
+                    },
+                    'openapi_types': {
+                        'status':
+                            ([str],),
+                    },
+                    'attribute_map': {
+                        'status': 'status',
+                    },
+                    'location_map': {
+                        'status': 'query',
+                    },
+                    'collection_format_map': {
+                        'status': 'csv',
+                    }
                 },
-                'openapi_types': {
-                    'status':
-                        ([str],),
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'attribute_map': {
-                    'status': 'status',
-                },
-                'location_map': {
-                    'status': 'query',
-                },
-                'collection_format_map': {
-                    'status': 'csv',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__find_pets_by_status
-        )
+                api_client=api_client,
+                callable=__find_pets_by_status
+            )
 
         def __find_pets_by_tags(
             self,
@@ -481,61 +484,62 @@ class PetApi(object):
                 tags
             return self.call_with_http_info(**kwargs)
 
-        self.find_pets_by_tags = _Endpoint(
-            settings={
-                'response_type': ([Pet],),
-                'auth': [
-                    'http_signature_test',
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet/findByTags',
-                'operation_id': 'find_pets_by_tags',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'tags',
-                ],
-                'required': [
-                    'tags',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.find_pets_by_tags is None:
+            self.find_pets_by_tags = _Endpoint(
+                settings={
+                    'response_type': ([Pet],),
+                    'auth': [
+                        'http_signature_test',
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet/findByTags',
+                    'operation_id': 'find_pets_by_tags',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'tags',
+                    ],
+                    'required': [
+                        'tags',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'tags':
-                        ([str],),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'tags':
+                            ([str],),
+                    },
+                    'attribute_map': {
+                        'tags': 'tags',
+                    },
+                    'location_map': {
+                        'tags': 'query',
+                    },
+                    'collection_format_map': {
+                        'tags': 'csv',
+                    }
                 },
-                'attribute_map': {
-                    'tags': 'tags',
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'tags': 'query',
-                },
-                'collection_format_map': {
-                    'tags': 'csv',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__find_pets_by_tags
-        )
+                api_client=api_client,
+                callable=__find_pets_by_tags
+            )
 
         def __get_pet_by_id(
             self,
@@ -603,59 +607,60 @@ class PetApi(object):
                 pet_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_pet_by_id = _Endpoint(
-            settings={
-                'response_type': (Pet,),
-                'auth': [
-                    'api_key'
-                ],
-                'endpoint_path': '/pet/{petId}',
-                'operation_id': 'get_pet_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'pet_id',
-                ],
-                'required': [
-                    'pet_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.get_pet_by_id is None:
+            self.get_pet_by_id = _Endpoint(
+                settings={
+                    'response_type': (Pet,),
+                    'auth': [
+                        'api_key'
+                    ],
+                    'endpoint_path': '/pet/{petId}',
+                    'operation_id': 'get_pet_by_id',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'pet_id',
+                    ],
+                    'required': [
+                        'pet_id',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'pet_id':
-                        (int,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'pet_id':
+                            (int,),
+                    },
+                    'attribute_map': {
+                        'pet_id': 'petId',
+                    },
+                    'location_map': {
+                        'pet_id': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'pet_id': 'petId',
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'pet_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_pet_by_id
-        )
+                api_client=api_client,
+                callable=__get_pet_by_id
+            )
 
         def __update_pet(
             self,
@@ -722,68 +727,69 @@ class PetApi(object):
                 pet
             return self.call_with_http_info(**kwargs)
 
-        self.update_pet = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'http_signature_test',
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet',
-                'operation_id': 'update_pet',
-                'http_method': 'PUT',
-                'servers': [
-                    {
-                        'url': "http://petstore.swagger.io/v2",
-                        'description': "No description provided",
+        if self.update_pet is None:
+            self.update_pet = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'http_signature_test',
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet',
+                    'operation_id': 'update_pet',
+                    'http_method': 'PUT',
+                    'servers': [
+                        {
+                            'url': "http://petstore.swagger.io/v2",
+                            'description': "No description provided",
+                        },
+                        {
+                            'url': "http://path-server-test.petstore.local/v2",
+                            'description': "No description provided",
+                        },
+                    ]
+                },
+                params_map={
+                    'all': [
+                        'pet',
+                    ],
+                    'required': [
+                        'pet',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
+                },
+                root_map={
+                    'validations': {
                     },
-                    {
-                        'url': "http://path-server-test.petstore.local/v2",
-                        'description': "No description provided",
+                    'allowed_values': {
                     },
-                ]
-            },
-            params_map={
-                'all': [
-                    'pet',
-                ],
-                'required': [
-                    'pet',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+                    'openapi_types': {
+                        'pet':
+                            (Pet,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'pet': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/json',
+                        'application/xml'
+                    ]
                 },
-                'openapi_types': {
-                    'pet':
-                        (Pet,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'pet': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json',
-                    'application/xml'
-                ]
-            },
-            api_client=api_client,
-            callable=__update_pet
-        )
+                api_client=api_client,
+                callable=__update_pet
+            )
 
         def __update_pet_with_form(
             self,
@@ -852,65 +858,74 @@ class PetApi(object):
                 pet_id
             return self.call_with_http_info(**kwargs)
 
-        self.update_pet_with_form = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'petstore_auth'
-                ],
-                'endpoint_path': '/pet/{petId}',
-                'operation_id': 'update_pet_with_form',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'pet_id',
-                    'name',
-                    'status',
-                ],
-                'required': [
-                    'pet_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.update_pet_with_form is None:
+            self.update_pet_with_form = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'petstore_auth'
+                    ],
+                    'endpoint_path': '/pet/{petId}',
+                    'operation_id': 'update_pet_with_form',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'pet_id',
+                        'name',
+                        'status',
+                    ],
+                    'required': [
+                        'pet_id',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'pet_id':
-                        (int,),
-                    'name':
-                        (str,),
-                    'status':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'pet_id':
+                            (int,),
+                        'name':
+                            (str,),
+                        'status':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'pet_id': 'petId',
+                        'name': 'name',
+                        'status': 'status',
+                    },
+                    'location_map': {
+                        'pet_id': 'path',
+                        'name': 'form',
+                        'status': 'form',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'pet_id': 'petId',
-                    'name': 'name',
-                    'status': 'status',
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/x-www-form-urlencoded'
+                    ]
                 },
-                'location_map': {
-                    'pet_id': 'path',
-                    'name': 'form',
-                    'status': 'form',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/x-www-form-urlencoded'
-                ]
-            },
-            api_client=api_client,
-            callable=__update_pet_with_form
-        )
+                api_client=api_client,
+                callable=__update_pet_with_form
+            )
+
+    add_pet = None 
+    delete_pet = None 
+    find_pets_by_status = None 
+    find_pets_by_tags = None 
+    get_pet_by_id = None 
+    update_pet = None 
+    update_pet_with_form = None 

@@ -102,56 +102,59 @@ class FakeClassnameTags123Api(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.test_classname = _Endpoint(
-            settings={
-                'response_type': (Client,),
-                'auth': [
-                    'api_key_query'
-                ],
-                'endpoint_path': '/fake_classname_test',
-                'operation_id': 'test_classname',
-                'http_method': 'PATCH',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_classname is None:
+            self.test_classname = _Endpoint(
+                settings={
+                    'response_type': (Client,),
+                    'auth': [
+                        'api_key_query'
+                    ],
+                    'endpoint_path': '/fake_classname_test',
+                    'operation_id': 'test_classname',
+                    'http_method': 'PATCH',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (Client,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (Client,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_classname
-        )
+                api_client=api_client,
+                callable=__test_classname
+            )
+
+    test_classname = None 

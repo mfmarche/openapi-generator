@@ -60,6 +60,238 @@ class XmlItem(ModelNormal):
     validations = {
     }
 
+    @property
+    def attribute_string(self):
+       return self.get("attribute_string")
+
+    @attribute_string.setter
+    def attribute_string(self, new_value):
+       self.attribute_string = new_value
+
+    @property
+    def attribute_number(self):
+       return self.get("attribute_number")
+
+    @attribute_number.setter
+    def attribute_number(self, new_value):
+       self.attribute_number = new_value
+
+    @property
+    def attribute_integer(self):
+       return self.get("attribute_integer")
+
+    @attribute_integer.setter
+    def attribute_integer(self, new_value):
+       self.attribute_integer = new_value
+
+    @property
+    def attribute_boolean(self):
+       return self.get("attribute_boolean")
+
+    @attribute_boolean.setter
+    def attribute_boolean(self, new_value):
+       self.attribute_boolean = new_value
+
+    @property
+    def wrapped_array(self):
+       return self.get("wrapped_array")
+
+    @wrapped_array.setter
+    def wrapped_array(self, new_value):
+       self.wrapped_array = new_value
+
+    @property
+    def name_string(self):
+       return self.get("name_string")
+
+    @name_string.setter
+    def name_string(self, new_value):
+       self.name_string = new_value
+
+    @property
+    def name_number(self):
+       return self.get("name_number")
+
+    @name_number.setter
+    def name_number(self, new_value):
+       self.name_number = new_value
+
+    @property
+    def name_integer(self):
+       return self.get("name_integer")
+
+    @name_integer.setter
+    def name_integer(self, new_value):
+       self.name_integer = new_value
+
+    @property
+    def name_boolean(self):
+       return self.get("name_boolean")
+
+    @name_boolean.setter
+    def name_boolean(self, new_value):
+       self.name_boolean = new_value
+
+    @property
+    def name_array(self):
+       return self.get("name_array")
+
+    @name_array.setter
+    def name_array(self, new_value):
+       self.name_array = new_value
+
+    @property
+    def name_wrapped_array(self):
+       return self.get("name_wrapped_array")
+
+    @name_wrapped_array.setter
+    def name_wrapped_array(self, new_value):
+       self.name_wrapped_array = new_value
+
+    @property
+    def prefix_string(self):
+       return self.get("prefix_string")
+
+    @prefix_string.setter
+    def prefix_string(self, new_value):
+       self.prefix_string = new_value
+
+    @property
+    def prefix_number(self):
+       return self.get("prefix_number")
+
+    @prefix_number.setter
+    def prefix_number(self, new_value):
+       self.prefix_number = new_value
+
+    @property
+    def prefix_integer(self):
+       return self.get("prefix_integer")
+
+    @prefix_integer.setter
+    def prefix_integer(self, new_value):
+       self.prefix_integer = new_value
+
+    @property
+    def prefix_boolean(self):
+       return self.get("prefix_boolean")
+
+    @prefix_boolean.setter
+    def prefix_boolean(self, new_value):
+       self.prefix_boolean = new_value
+
+    @property
+    def prefix_array(self):
+       return self.get("prefix_array")
+
+    @prefix_array.setter
+    def prefix_array(self, new_value):
+       self.prefix_array = new_value
+
+    @property
+    def prefix_wrapped_array(self):
+       return self.get("prefix_wrapped_array")
+
+    @prefix_wrapped_array.setter
+    def prefix_wrapped_array(self, new_value):
+       self.prefix_wrapped_array = new_value
+
+    @property
+    def namespace_string(self):
+       return self.get("namespace_string")
+
+    @namespace_string.setter
+    def namespace_string(self, new_value):
+       self.namespace_string = new_value
+
+    @property
+    def namespace_number(self):
+       return self.get("namespace_number")
+
+    @namespace_number.setter
+    def namespace_number(self, new_value):
+       self.namespace_number = new_value
+
+    @property
+    def namespace_integer(self):
+       return self.get("namespace_integer")
+
+    @namespace_integer.setter
+    def namespace_integer(self, new_value):
+       self.namespace_integer = new_value
+
+    @property
+    def namespace_boolean(self):
+       return self.get("namespace_boolean")
+
+    @namespace_boolean.setter
+    def namespace_boolean(self, new_value):
+       self.namespace_boolean = new_value
+
+    @property
+    def namespace_array(self):
+       return self.get("namespace_array")
+
+    @namespace_array.setter
+    def namespace_array(self, new_value):
+       self.namespace_array = new_value
+
+    @property
+    def namespace_wrapped_array(self):
+       return self.get("namespace_wrapped_array")
+
+    @namespace_wrapped_array.setter
+    def namespace_wrapped_array(self, new_value):
+       self.namespace_wrapped_array = new_value
+
+    @property
+    def prefix_ns_string(self):
+       return self.get("prefix_ns_string")
+
+    @prefix_ns_string.setter
+    def prefix_ns_string(self, new_value):
+       self.prefix_ns_string = new_value
+
+    @property
+    def prefix_ns_number(self):
+       return self.get("prefix_ns_number")
+
+    @prefix_ns_number.setter
+    def prefix_ns_number(self, new_value):
+       self.prefix_ns_number = new_value
+
+    @property
+    def prefix_ns_integer(self):
+       return self.get("prefix_ns_integer")
+
+    @prefix_ns_integer.setter
+    def prefix_ns_integer(self, new_value):
+       self.prefix_ns_integer = new_value
+
+    @property
+    def prefix_ns_boolean(self):
+       return self.get("prefix_ns_boolean")
+
+    @prefix_ns_boolean.setter
+    def prefix_ns_boolean(self, new_value):
+       self.prefix_ns_boolean = new_value
+
+    @property
+    def prefix_ns_array(self):
+       return self.get("prefix_ns_array")
+
+    @prefix_ns_array.setter
+    def prefix_ns_array(self, new_value):
+       self.prefix_ns_array = new_value
+
+    @property
+    def prefix_ns_wrapped_array(self):
+       return self.get("prefix_ns_wrapped_array")
+
+    @prefix_ns_wrapped_array.setter
+    def prefix_ns_wrapped_array(self, new_value):
+       self.prefix_ns_wrapped_array = new_value
+
     additional_properties_type = None
 
     _nullable = False
@@ -109,6 +341,7 @@ class XmlItem(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -250,7 +483,10 @@ class XmlItem(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -359,3 +595,4 @@ class XmlItem(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

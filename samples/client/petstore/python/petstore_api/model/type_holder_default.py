@@ -60,6 +60,62 @@ class TypeHolderDefault(ModelNormal):
     validations = {
     }
 
+    @property
+    def string_item(self):
+       return self.get("string_item")
+
+    @string_item.setter
+    def string_item(self, new_value):
+       self.string_item = new_value
+
+    @property
+    def number_item(self):
+       return self.get("number_item")
+
+    @number_item.setter
+    def number_item(self, new_value):
+       self.number_item = new_value
+
+    @property
+    def integer_item(self):
+       return self.get("integer_item")
+
+    @integer_item.setter
+    def integer_item(self, new_value):
+       self.integer_item = new_value
+
+    @property
+    def bool_item(self):
+       return self.get("bool_item")
+
+    @bool_item.setter
+    def bool_item(self, new_value):
+       self.bool_item = new_value
+
+    @property
+    def date_item(self):
+       return self.get("date_item")
+
+    @date_item.setter
+    def date_item(self, new_value):
+       self.date_item = new_value
+
+    @property
+    def datetime_item(self):
+       return self.get("datetime_item")
+
+    @datetime_item.setter
+    def datetime_item(self, new_value):
+       self.datetime_item = new_value
+
+    @property
+    def array_item(self):
+       return self.get("array_item")
+
+    @array_item.setter
+    def array_item(self, new_value):
+       self.array_item = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -93,6 +149,7 @@ class TypeHolderDefault(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -201,7 +258,10 @@ class TypeHolderDefault(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -299,3 +359,4 @@ class TypeHolderDefault(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

@@ -112,55 +112,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.additional_properties_with_array_of_enums = _Endpoint(
-            settings={
-                'response_type': (AdditionalPropertiesWithArrayOfEnums,),
-                'auth': [],
-                'endpoint_path': '/fake/additional-properties-with-array-of-enums',
-                'operation_id': 'additional_properties_with_array_of_enums',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'additional_properties_with_array_of_enums',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.additional_properties_with_array_of_enums is None:
+            self.additional_properties_with_array_of_enums = _Endpoint(
+                settings={
+                    'response_type': (AdditionalPropertiesWithArrayOfEnums,),
+                    'auth': [],
+                    'endpoint_path': '/fake/additional-properties-with-array-of-enums',
+                    'operation_id': 'additional_properties_with_array_of_enums',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'additional_properties_with_array_of_enums',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'additional_properties_with_array_of_enums':
-                        (AdditionalPropertiesWithArrayOfEnums,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'additional_properties_with_array_of_enums':
+                            (AdditionalPropertiesWithArrayOfEnums,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'additional_properties_with_array_of_enums': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'additional_properties_with_array_of_enums': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__additional_properties_with_array_of_enums
-        )
+                api_client=api_client,
+                callable=__additional_properties_with_array_of_enums
+            )
 
         def __array_model(
             self,
@@ -224,55 +225,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.array_model = _Endpoint(
-            settings={
-                'response_type': (AnimalFarm,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/arraymodel',
-                'operation_id': 'array_model',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.array_model is None:
+            self.array_model = _Endpoint(
+                settings={
+                    'response_type': (AnimalFarm,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/arraymodel',
+                    'operation_id': 'array_model',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (AnimalFarm,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (AnimalFarm,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__array_model
-        )
+                api_client=api_client,
+                callable=__array_model
+            )
 
         def __array_of_enums(
             self,
@@ -335,55 +337,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.array_of_enums = _Endpoint(
-            settings={
-                'response_type': (ArrayOfEnums,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/array-of-enums',
-                'operation_id': 'array_of_enums',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'array_of_enums',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.array_of_enums is None:
+            self.array_of_enums = _Endpoint(
+                settings={
+                    'response_type': (ArrayOfEnums,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/array-of-enums',
+                    'operation_id': 'array_of_enums',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'array_of_enums',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'array_of_enums':
-                        (ArrayOfEnums,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'array_of_enums':
+                            (ArrayOfEnums,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'array_of_enums': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'array_of_enums': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__array_of_enums
-        )
+                api_client=api_client,
+                callable=__array_of_enums
+            )
 
         def __boolean(
             self,
@@ -447,55 +450,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.boolean = _Endpoint(
-            settings={
-                'response_type': (bool,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/boolean',
-                'operation_id': 'boolean',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.boolean is None:
+            self.boolean = _Endpoint(
+                settings={
+                    'response_type': (bool,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/boolean',
+                    'operation_id': 'boolean',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (bool,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (bool,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__boolean
-        )
+                api_client=api_client,
+                callable=__boolean
+            )
 
         def __composed_one_of_number_with_validations(
             self,
@@ -559,55 +563,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.composed_one_of_number_with_validations = _Endpoint(
-            settings={
-                'response_type': (ComposedOneOfNumberWithValidations,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/composed_one_of_number_with_validations',
-                'operation_id': 'composed_one_of_number_with_validations',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'composed_one_of_number_with_validations',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.composed_one_of_number_with_validations is None:
+            self.composed_one_of_number_with_validations = _Endpoint(
+                settings={
+                    'response_type': (ComposedOneOfNumberWithValidations,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/composed_one_of_number_with_validations',
+                    'operation_id': 'composed_one_of_number_with_validations',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'composed_one_of_number_with_validations',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'composed_one_of_number_with_validations':
-                        (ComposedOneOfNumberWithValidations,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'composed_one_of_number_with_validations':
+                            (ComposedOneOfNumberWithValidations,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'composed_one_of_number_with_validations': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'composed_one_of_number_with_validations': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__composed_one_of_number_with_validations
-        )
+                api_client=api_client,
+                callable=__composed_one_of_number_with_validations
+            )
 
         def __download_attachment(
             self,
@@ -674,61 +679,62 @@ class FakeApi(object):
                 file_name
             return self.call_with_http_info(**kwargs)
 
-        self.download_attachment = _Endpoint(
-            settings={
-                'response_type': (file_type,),
-                'auth': [],
-                'endpoint_path': '/{fileName}',
-                'operation_id': 'download_attachment',
-                'http_method': 'GET',
-                'servers': [
-                    {
-                        'url': "http://www.jtricks.com",
-                        'description': "No description provided",
+        if self.download_attachment is None:
+            self.download_attachment = _Endpoint(
+                settings={
+                    'response_type': (file_type,),
+                    'auth': [],
+                    'endpoint_path': '/{fileName}',
+                    'operation_id': 'download_attachment',
+                    'http_method': 'GET',
+                    'servers': [
+                        {
+                            'url': "http://www.jtricks.com",
+                            'description': "No description provided",
+                        },
+                    ]
+                },
+                params_map={
+                    'all': [
+                        'file_name',
+                    ],
+                    'required': [
+                        'file_name',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
+                },
+                root_map={
+                    'validations': {
                     },
-                ]
-            },
-            params_map={
-                'all': [
-                    'file_name',
-                ],
-                'required': [
-                    'file_name',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'file_name':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'file_name': 'fileName',
+                    },
+                    'location_map': {
+                        'file_name': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [
+                        'text/plain'
+                    ],
+                    'content_type': [],
                 },
-                'openapi_types': {
-                    'file_name':
-                        (str,),
-                },
-                'attribute_map': {
-                    'file_name': 'fileName',
-                },
-                'location_map': {
-                    'file_name': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__download_attachment
-        )
+                api_client=api_client,
+                callable=__download_attachment
+            )
 
         def __enum_test(
             self,
@@ -791,55 +797,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.enum_test = _Endpoint(
-            settings={
-                'response_type': (EnumTest,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/enum-test',
-                'operation_id': 'enum_test',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'enum_test',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.enum_test is None:
+            self.enum_test = _Endpoint(
+                settings={
+                    'response_type': (EnumTest,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/enum-test',
+                    'operation_id': 'enum_test',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'enum_test',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'enum_test':
-                        (EnumTest,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'enum_test':
+                            (EnumTest,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'enum_test': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'enum_test': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__enum_test
-        )
+                api_client=api_client,
+                callable=__enum_test
+            )
 
         def __fake_health_get(
             self,
@@ -901,49 +908,50 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.fake_health_get = _Endpoint(
-            settings={
-                'response_type': (HealthCheckResult,),
-                'auth': [],
-                'endpoint_path': '/fake/health',
-                'operation_id': 'fake_health_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.fake_health_get is None:
+            self.fake_health_get = _Endpoint(
+                settings={
+                    'response_type': (HealthCheckResult,),
+                    'auth': [],
+                    'endpoint_path': '/fake/health',
+                    'operation_id': 'fake_health_get',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__fake_health_get
-        )
+                api_client=api_client,
+                callable=__fake_health_get
+            )
 
         def __mammal(
             self,
@@ -1011,57 +1019,58 @@ class FakeApi(object):
                 mammal
             return self.call_with_http_info(**kwargs)
 
-        self.mammal = _Endpoint(
-            settings={
-                'response_type': (Mammal,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/mammal',
-                'operation_id': 'mammal',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'mammal',
-                ],
-                'required': [
-                    'mammal',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.mammal is None:
+            self.mammal = _Endpoint(
+                settings={
+                    'response_type': (Mammal,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/mammal',
+                    'operation_id': 'mammal',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'mammal',
+                    ],
+                    'required': [
+                        'mammal',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'mammal':
-                        (Mammal,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'mammal':
+                            (Mammal,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'mammal': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'mammal': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__mammal
-        )
+                api_client=api_client,
+                callable=__mammal
+            )
 
         def __number_with_validations(
             self,
@@ -1125,55 +1134,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.number_with_validations = _Endpoint(
-            settings={
-                'response_type': (NumberWithValidations,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/number',
-                'operation_id': 'number_with_validations',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.number_with_validations is None:
+            self.number_with_validations = _Endpoint(
+                settings={
+                    'response_type': (NumberWithValidations,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/number',
+                    'operation_id': 'number_with_validations',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (NumberWithValidations,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (NumberWithValidations,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__number_with_validations
-        )
+                api_client=api_client,
+                callable=__number_with_validations
+            )
 
         def __object_model_with_ref_props(
             self,
@@ -1237,55 +1247,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.object_model_with_ref_props = _Endpoint(
-            settings={
-                'response_type': (ObjectModelWithRefProps,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/object_model_with_ref_props',
-                'operation_id': 'object_model_with_ref_props',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.object_model_with_ref_props is None:
+            self.object_model_with_ref_props = _Endpoint(
+                settings={
+                    'response_type': (ObjectModelWithRefProps,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/object_model_with_ref_props',
+                    'operation_id': 'object_model_with_ref_props',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (ObjectModelWithRefProps,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (ObjectModelWithRefProps,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__object_model_with_ref_props
-        )
+                api_client=api_client,
+                callable=__object_model_with_ref_props
+            )
 
         def __post_inline_additional_properties_payload(
             self,
@@ -1348,55 +1359,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.post_inline_additional_properties_payload = _Endpoint(
-            settings={
-                'response_type': (InlineObject6,),
-                'auth': [],
-                'endpoint_path': '/fake/postInlineAdditionalPropertiesPayload',
-                'operation_id': 'post_inline_additional_properties_payload',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'inline_object6',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.post_inline_additional_properties_payload is None:
+            self.post_inline_additional_properties_payload = _Endpoint(
+                settings={
+                    'response_type': (InlineObject6,),
+                    'auth': [],
+                    'endpoint_path': '/fake/postInlineAdditionalPropertiesPayload',
+                    'operation_id': 'post_inline_additional_properties_payload',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'inline_object6',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'inline_object6':
-                        (InlineObject6,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'inline_object6':
+                            (InlineObject6,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'inline_object6': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'inline_object6': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__post_inline_additional_properties_payload
-        )
+                api_client=api_client,
+                callable=__post_inline_additional_properties_payload
+            )
 
         def __post_inline_additional_properties_ref_payload(
             self,
@@ -1459,55 +1471,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.post_inline_additional_properties_ref_payload = _Endpoint(
-            settings={
-                'response_type': (InlineAdditionalPropertiesRefPayload,),
-                'auth': [],
-                'endpoint_path': '/fake/postInlineAdditionalPropertiesRefPayload',
-                'operation_id': 'post_inline_additional_properties_ref_payload',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'inline_additional_properties_ref_payload',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.post_inline_additional_properties_ref_payload is None:
+            self.post_inline_additional_properties_ref_payload = _Endpoint(
+                settings={
+                    'response_type': (InlineAdditionalPropertiesRefPayload,),
+                    'auth': [],
+                    'endpoint_path': '/fake/postInlineAdditionalPropertiesRefPayload',
+                    'operation_id': 'post_inline_additional_properties_ref_payload',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'inline_additional_properties_ref_payload',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'inline_additional_properties_ref_payload':
-                        (InlineAdditionalPropertiesRefPayload,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'inline_additional_properties_ref_payload':
+                            (InlineAdditionalPropertiesRefPayload,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'inline_additional_properties_ref_payload': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'inline_additional_properties_ref_payload': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__post_inline_additional_properties_ref_payload
-        )
+                api_client=api_client,
+                callable=__post_inline_additional_properties_ref_payload
+            )
 
         def __string(
             self,
@@ -1571,55 +1584,56 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.string = _Endpoint(
-            settings={
-                'response_type': (str,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/string',
-                'operation_id': 'string',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.string is None:
+            self.string = _Endpoint(
+                settings={
+                    'response_type': (str,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/string',
+                    'operation_id': 'string',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (str,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__string
-        )
+                api_client=api_client,
+                callable=__string
+            )
 
         def __string_enum(
             self,
@@ -1683,56 +1697,57 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.string_enum = _Endpoint(
-            settings={
-                'response_type': (StringEnum,),
-                'auth': [],
-                'endpoint_path': '/fake/refs/enum',
-                'operation_id': 'string_enum',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [],
-                'nullable': [
-                    'body',
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.string_enum is None:
+            self.string_enum = _Endpoint(
+                settings={
+                    'response_type': (StringEnum,),
+                    'auth': [],
+                    'endpoint_path': '/fake/refs/enum',
+                    'operation_id': 'string_enum',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [],
+                    'nullable': [
+                        'body',
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (StringEnum,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (StringEnum,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__string_enum
-        )
+                api_client=api_client,
+                callable=__string_enum
+            )
 
         def __test_body_with_file_schema(
             self,
@@ -1800,55 +1815,56 @@ class FakeApi(object):
                 file_schema_test_class
             return self.call_with_http_info(**kwargs)
 
-        self.test_body_with_file_schema = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake/body-with-file-schema',
-                'operation_id': 'test_body_with_file_schema',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'file_schema_test_class',
-                ],
-                'required': [
-                    'file_schema_test_class',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_body_with_file_schema is None:
+            self.test_body_with_file_schema = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake/body-with-file-schema',
+                    'operation_id': 'test_body_with_file_schema',
+                    'http_method': 'PUT',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'file_schema_test_class',
+                    ],
+                    'required': [
+                        'file_schema_test_class',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'file_schema_test_class':
-                        (FileSchemaTestClass,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'file_schema_test_class':
+                            (FileSchemaTestClass,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'file_schema_test_class': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'file_schema_test_class': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_body_with_file_schema
-        )
+                api_client=api_client,
+                callable=__test_body_with_file_schema
+            )
 
         def __test_body_with_query_params(
             self,
@@ -1919,61 +1935,62 @@ class FakeApi(object):
                 user
             return self.call_with_http_info(**kwargs)
 
-        self.test_body_with_query_params = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake/body-with-query-params',
-                'operation_id': 'test_body_with_query_params',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'query',
-                    'user',
-                ],
-                'required': [
-                    'query',
-                    'user',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_body_with_query_params is None:
+            self.test_body_with_query_params = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake/body-with-query-params',
+                    'operation_id': 'test_body_with_query_params',
+                    'http_method': 'PUT',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'query',
+                        'user',
+                    ],
+                    'required': [
+                        'query',
+                        'user',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'query':
-                        (str,),
-                    'user':
-                        (User,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'query':
+                            (str,),
+                        'user':
+                            (User,),
+                    },
+                    'attribute_map': {
+                        'query': 'query',
+                    },
+                    'location_map': {
+                        'query': 'query',
+                        'user': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'query': 'query',
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'query': 'query',
-                    'user': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_body_with_query_params
-        )
+                api_client=api_client,
+                callable=__test_body_with_query_params
+            )
 
         def __test_client_model(
             self,
@@ -2041,57 +2058,58 @@ class FakeApi(object):
                 client
             return self.call_with_http_info(**kwargs)
 
-        self.test_client_model = _Endpoint(
-            settings={
-                'response_type': (Client,),
-                'auth': [],
-                'endpoint_path': '/fake',
-                'operation_id': 'test_client_model',
-                'http_method': 'PATCH',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'client',
-                ],
-                'required': [
-                    'client',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_client_model is None:
+            self.test_client_model = _Endpoint(
+                settings={
+                    'response_type': (Client,),
+                    'auth': [],
+                    'endpoint_path': '/fake',
+                    'operation_id': 'test_client_model',
+                    'http_method': 'PATCH',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'client',
+                    ],
+                    'required': [
+                        'client',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'client':
-                        (Client,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'client':
+                            (Client,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'client': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'client': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_client_model
-        )
+                api_client=api_client,
+                callable=__test_client_model
+            )
 
         def __test_endpoint_parameters(
             self,
@@ -2181,175 +2199,176 @@ class FakeApi(object):
                 byte
             return self.call_with_http_info(**kwargs)
 
-        self.test_endpoint_parameters = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'http_basic_test'
-                ],
-                'endpoint_path': '/fake',
-                'operation_id': 'test_endpoint_parameters',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'number',
-                    'double',
-                    'pattern_without_delimiter',
-                    'byte',
-                    'integer',
-                    'int32',
-                    'int64',
-                    'float',
-                    'string',
-                    'binary',
-                    'date',
-                    'date_time',
-                    'password',
-                    'param_callback',
-                ],
-                'required': [
-                    'number',
-                    'double',
-                    'pattern_without_delimiter',
-                    'byte',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                    'number',
-                    'double',
-                    'pattern_without_delimiter',
-                    'integer',
-                    'int32',
-                    'float',
-                    'string',
-                    'password',
-                ]
-            },
-            root_map={
-                'validations': {
-                    ('number',): {
+        if self.test_endpoint_parameters is None:
+            self.test_endpoint_parameters = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'http_basic_test'
+                    ],
+                    'endpoint_path': '/fake',
+                    'operation_id': 'test_endpoint_parameters',
+                    'http_method': 'POST',
+                    'servers': None,
+                },
+                params_map={
+                    'all': [
+                        'number',
+                        'double',
+                        'pattern_without_delimiter',
+                        'byte',
+                        'integer',
+                        'int32',
+                        'int64',
+                        'float',
+                        'string',
+                        'binary',
+                        'date',
+                        'date_time',
+                        'password',
+                        'param_callback',
+                    ],
+                    'required': [
+                        'number',
+                        'double',
+                        'pattern_without_delimiter',
+                        'byte',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                        'number',
+                        'double',
+                        'pattern_without_delimiter',
+                        'integer',
+                        'int32',
+                        'float',
+                        'string',
+                        'password',
+                    ]
+                },
+                root_map={
+                    'validations': {
+                        ('number',): {
 
-                        'inclusive_maximum': 543.2,
-                        'inclusive_minimum': 32.1,
-                    },
-                    ('double',): {
+                            'inclusive_maximum': 543.2,
+                            'inclusive_minimum': 32.1,
+                        },
+                        ('double',): {
 
-                        'exclusive_maximum': 123.4,
-                        'inclusive_minimum': 67.8,
-                    },
-                    ('pattern_without_delimiter',): {
+                            'exclusive_maximum': 123.4,
+                            'inclusive_minimum': 67.8,
+                        },
+                        ('pattern_without_delimiter',): {
 
-                        'regex': {
-                            'pattern': r'^[A-Z].*',  # noqa: E501
+                            'regex': {
+                                'pattern': r'^[A-Z].*',  # noqa: E501
+                            },
+                        },
+                        ('integer',): {
+
+                            'inclusive_maximum': 100,
+                            'inclusive_minimum': 10,
+                        },
+                        ('int32',): {
+
+                            'inclusive_maximum': 200,
+                            'inclusive_minimum': 20,
+                        },
+                        ('float',): {
+
+                            'exclusive_maximum': 987.6,
+                        },
+                        ('string',): {
+
+                            'regex': {
+                                'pattern': r'[a-z]',  # noqa: E501
+                                'flags': (re.IGNORECASE)
+                            },
+                        },
+                        ('password',): {
+                            'max_length': 64,
+                            'min_length': 10,
                         },
                     },
-                    ('integer',): {
-
-                        'inclusive_maximum': 100,
-                        'inclusive_minimum': 10,
+                    'allowed_values': {
                     },
-                    ('int32',): {
-
-                        'inclusive_maximum': 200,
-                        'inclusive_minimum': 20,
+                    'openapi_types': {
+                        'number':
+                            (float,),
+                        'double':
+                            (float,),
+                        'pattern_without_delimiter':
+                            (str,),
+                        'byte':
+                            (str,),
+                        'integer':
+                            (int,),
+                        'int32':
+                            (int,),
+                        'int64':
+                            (int,),
+                        'float':
+                            (float,),
+                        'string':
+                            (str,),
+                        'binary':
+                            (file_type,),
+                        'date':
+                            (date,),
+                        'date_time':
+                            (datetime,),
+                        'password':
+                            (str,),
+                        'param_callback':
+                            (str,),
                     },
-                    ('float',): {
-
-                        'exclusive_maximum': 987.6,
+                    'attribute_map': {
+                        'number': 'number',
+                        'double': 'double',
+                        'pattern_without_delimiter': 'pattern_without_delimiter',
+                        'byte': 'byte',
+                        'integer': 'integer',
+                        'int32': 'int32',
+                        'int64': 'int64',
+                        'float': 'float',
+                        'string': 'string',
+                        'binary': 'binary',
+                        'date': 'date',
+                        'date_time': 'dateTime',
+                        'password': 'password',
+                        'param_callback': 'callback',
                     },
-                    ('string',): {
-
-                        'regex': {
-                            'pattern': r'[a-z]',  # noqa: E501
-                            'flags': (re.IGNORECASE)
-                        },
+                    'location_map': {
+                        'number': 'form',
+                        'double': 'form',
+                        'pattern_without_delimiter': 'form',
+                        'byte': 'form',
+                        'integer': 'form',
+                        'int32': 'form',
+                        'int64': 'form',
+                        'float': 'form',
+                        'string': 'form',
+                        'binary': 'form',
+                        'date': 'form',
+                        'date_time': 'form',
+                        'password': 'form',
+                        'param_callback': 'form',
                     },
-                    ('password',): {
-                        'max_length': 64,
-                        'min_length': 10,
-                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/x-www-form-urlencoded'
+                    ]
                 },
-                'openapi_types': {
-                    'number':
-                        (float,),
-                    'double':
-                        (float,),
-                    'pattern_without_delimiter':
-                        (str,),
-                    'byte':
-                        (str,),
-                    'integer':
-                        (int,),
-                    'int32':
-                        (int,),
-                    'int64':
-                        (int,),
-                    'float':
-                        (float,),
-                    'string':
-                        (str,),
-                    'binary':
-                        (file_type,),
-                    'date':
-                        (date,),
-                    'date_time':
-                        (datetime,),
-                    'password':
-                        (str,),
-                    'param_callback':
-                        (str,),
-                },
-                'attribute_map': {
-                    'number': 'number',
-                    'double': 'double',
-                    'pattern_without_delimiter': 'pattern_without_delimiter',
-                    'byte': 'byte',
-                    'integer': 'integer',
-                    'int32': 'int32',
-                    'int64': 'int64',
-                    'float': 'float',
-                    'string': 'string',
-                    'binary': 'binary',
-                    'date': 'date',
-                    'date_time': 'dateTime',
-                    'password': 'password',
-                    'param_callback': 'callback',
-                },
-                'location_map': {
-                    'number': 'form',
-                    'double': 'form',
-                    'pattern_without_delimiter': 'form',
-                    'byte': 'form',
-                    'integer': 'form',
-                    'int32': 'form',
-                    'int64': 'form',
-                    'float': 'form',
-                    'string': 'form',
-                    'binary': 'form',
-                    'date': 'form',
-                    'date_time': 'form',
-                    'password': 'form',
-                    'param_callback': 'form',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/x-www-form-urlencoded'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_endpoint_parameters
-        )
+                api_client=api_client,
+                callable=__test_endpoint_parameters
+            )
 
         def __test_enum_parameters(
             self,
@@ -2420,143 +2439,144 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.test_enum_parameters = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake',
-                'operation_id': 'test_enum_parameters',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'enum_header_string_array',
-                    'enum_header_string',
-                    'enum_query_string_array',
-                    'enum_query_string',
-                    'enum_query_integer',
-                    'enum_query_double',
-                    'enum_form_string_array',
-                    'enum_form_string',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                    'enum_header_string_array',
-                    'enum_header_string',
-                    'enum_query_string_array',
-                    'enum_query_string',
-                    'enum_query_integer',
-                    'enum_query_double',
-                    'enum_form_string_array',
-                    'enum_form_string',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_enum_parameters is None:
+            self.test_enum_parameters = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake',
+                    'operation_id': 'test_enum_parameters',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
-                    ('enum_header_string_array',): {
-
-                        "&gt;": ">",
-                        "$": "$"
-                    },
-                    ('enum_header_string',): {
-
-                        "_ABC": "_abc",
-                        "-EFG": "-efg",
-                        "(XYZ)": "(xyz)"
-                    },
-                    ('enum_query_string_array',): {
-
-                        "&gt;": ">",
-                        "$": "$"
-                    },
-                    ('enum_query_string',): {
-
-                        "_ABC": "_abc",
-                        "-EFG": "-efg",
-                        "(XYZ)": "(xyz)"
-                    },
-                    ('enum_query_integer',): {
-
-                        "1": 1,
-                        "-2": -2
-                    },
-                    ('enum_query_double',): {
-
-                        "1.1": 1.1,
-                        "-1.2": -1.2
-                    },
-                    ('enum_form_string_array',): {
-
-                        "&gt;": ">",
-                        "$": "$"
-                    },
-                    ('enum_form_string',): {
-
-                        "_ABC": "_abc",
-                        "-EFG": "-efg",
-                        "(XYZ)": "(xyz)"
-                    },
+                params_map={
+                    'all': [
+                        'enum_header_string_array',
+                        'enum_header_string',
+                        'enum_query_string_array',
+                        'enum_query_string',
+                        'enum_query_integer',
+                        'enum_query_double',
+                        'enum_form_string_array',
+                        'enum_form_string',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                        'enum_header_string_array',
+                        'enum_header_string',
+                        'enum_query_string_array',
+                        'enum_query_string',
+                        'enum_query_integer',
+                        'enum_query_double',
+                        'enum_form_string_array',
+                        'enum_form_string',
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'enum_header_string_array':
-                        ([str],),
-                    'enum_header_string':
-                        (str,),
-                    'enum_query_string_array':
-                        ([str],),
-                    'enum_query_string':
-                        (str,),
-                    'enum_query_integer':
-                        (int,),
-                    'enum_query_double':
-                        (float,),
-                    'enum_form_string_array':
-                        ([str],),
-                    'enum_form_string':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                        ('enum_header_string_array',): {
+
+                            "&gt;": ">",
+                            "$": "$"
+                        },
+                        ('enum_header_string',): {
+
+                            "_ABC": "_abc",
+                            "-EFG": "-efg",
+                            "(XYZ)": "(xyz)"
+                        },
+                        ('enum_query_string_array',): {
+
+                            "&gt;": ">",
+                            "$": "$"
+                        },
+                        ('enum_query_string',): {
+
+                            "_ABC": "_abc",
+                            "-EFG": "-efg",
+                            "(XYZ)": "(xyz)"
+                        },
+                        ('enum_query_integer',): {
+
+                            "1": 1,
+                            "-2": -2
+                        },
+                        ('enum_query_double',): {
+
+                            "1.1": 1.1,
+                            "-1.2": -1.2
+                        },
+                        ('enum_form_string_array',): {
+
+                            "&gt;": ">",
+                            "$": "$"
+                        },
+                        ('enum_form_string',): {
+
+                            "_ABC": "_abc",
+                            "-EFG": "-efg",
+                            "(XYZ)": "(xyz)"
+                        },
+                    },
+                    'openapi_types': {
+                        'enum_header_string_array':
+                            ([str],),
+                        'enum_header_string':
+                            (str,),
+                        'enum_query_string_array':
+                            ([str],),
+                        'enum_query_string':
+                            (str,),
+                        'enum_query_integer':
+                            (int,),
+                        'enum_query_double':
+                            (float,),
+                        'enum_form_string_array':
+                            ([str],),
+                        'enum_form_string':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'enum_header_string_array': 'enum_header_string_array',
+                        'enum_header_string': 'enum_header_string',
+                        'enum_query_string_array': 'enum_query_string_array',
+                        'enum_query_string': 'enum_query_string',
+                        'enum_query_integer': 'enum_query_integer',
+                        'enum_query_double': 'enum_query_double',
+                        'enum_form_string_array': 'enum_form_string_array',
+                        'enum_form_string': 'enum_form_string',
+                    },
+                    'location_map': {
+                        'enum_header_string_array': 'header',
+                        'enum_header_string': 'header',
+                        'enum_query_string_array': 'query',
+                        'enum_query_string': 'query',
+                        'enum_query_integer': 'query',
+                        'enum_query_double': 'query',
+                        'enum_form_string_array': 'form',
+                        'enum_form_string': 'form',
+                    },
+                    'collection_format_map': {
+                        'enum_header_string_array': 'csv',
+                        'enum_query_string_array': 'multi',
+                        'enum_form_string_array': 'csv',
+                    }
                 },
-                'attribute_map': {
-                    'enum_header_string_array': 'enum_header_string_array',
-                    'enum_header_string': 'enum_header_string',
-                    'enum_query_string_array': 'enum_query_string_array',
-                    'enum_query_string': 'enum_query_string',
-                    'enum_query_integer': 'enum_query_integer',
-                    'enum_query_double': 'enum_query_double',
-                    'enum_form_string_array': 'enum_form_string_array',
-                    'enum_form_string': 'enum_form_string',
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/x-www-form-urlencoded'
+                    ]
                 },
-                'location_map': {
-                    'enum_header_string_array': 'header',
-                    'enum_header_string': 'header',
-                    'enum_query_string_array': 'query',
-                    'enum_query_string': 'query',
-                    'enum_query_integer': 'query',
-                    'enum_query_double': 'query',
-                    'enum_form_string_array': 'form',
-                    'enum_form_string': 'form',
-                },
-                'collection_format_map': {
-                    'enum_header_string_array': 'csv',
-                    'enum_query_string_array': 'multi',
-                    'enum_form_string_array': 'csv',
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/x-www-form-urlencoded'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_enum_parameters
-        )
+                api_client=api_client,
+                callable=__test_enum_parameters
+            )
 
         def __test_group_parameters(
             self,
@@ -2635,83 +2655,84 @@ class FakeApi(object):
                 required_int64_group
             return self.call_with_http_info(**kwargs)
 
-        self.test_group_parameters = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'bearer_test'
-                ],
-                'endpoint_path': '/fake',
-                'operation_id': 'test_group_parameters',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'required_string_group',
-                    'required_boolean_group',
-                    'required_int64_group',
-                    'string_group',
-                    'boolean_group',
-                    'int64_group',
-                ],
-                'required': [
-                    'required_string_group',
-                    'required_boolean_group',
-                    'required_int64_group',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_group_parameters is None:
+            self.test_group_parameters = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [
+                        'bearer_test'
+                    ],
+                    'endpoint_path': '/fake',
+                    'operation_id': 'test_group_parameters',
+                    'http_method': 'DELETE',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'required_string_group',
+                        'required_boolean_group',
+                        'required_int64_group',
+                        'string_group',
+                        'boolean_group',
+                        'int64_group',
+                    ],
+                    'required': [
+                        'required_string_group',
+                        'required_boolean_group',
+                        'required_int64_group',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'required_string_group':
-                        (int,),
-                    'required_boolean_group':
-                        (bool,),
-                    'required_int64_group':
-                        (int,),
-                    'string_group':
-                        (int,),
-                    'boolean_group':
-                        (bool,),
-                    'int64_group':
-                        (int,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'required_string_group':
+                            (int,),
+                        'required_boolean_group':
+                            (bool,),
+                        'required_int64_group':
+                            (int,),
+                        'string_group':
+                            (int,),
+                        'boolean_group':
+                            (bool,),
+                        'int64_group':
+                            (int,),
+                    },
+                    'attribute_map': {
+                        'required_string_group': 'required_string_group',
+                        'required_boolean_group': 'required_boolean_group',
+                        'required_int64_group': 'required_int64_group',
+                        'string_group': 'string_group',
+                        'boolean_group': 'boolean_group',
+                        'int64_group': 'int64_group',
+                    },
+                    'location_map': {
+                        'required_string_group': 'query',
+                        'required_boolean_group': 'header',
+                        'required_int64_group': 'query',
+                        'string_group': 'query',
+                        'boolean_group': 'header',
+                        'int64_group': 'query',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'required_string_group': 'required_string_group',
-                    'required_boolean_group': 'required_boolean_group',
-                    'required_int64_group': 'required_int64_group',
-                    'string_group': 'string_group',
-                    'boolean_group': 'boolean_group',
-                    'int64_group': 'int64_group',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'required_string_group': 'query',
-                    'required_boolean_group': 'header',
-                    'required_int64_group': 'query',
-                    'string_group': 'query',
-                    'boolean_group': 'header',
-                    'int64_group': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__test_group_parameters
-        )
+                api_client=api_client,
+                callable=__test_group_parameters
+            )
 
         def __test_inline_additional_properties(
             self,
@@ -2778,55 +2799,56 @@ class FakeApi(object):
                 request_body
             return self.call_with_http_info(**kwargs)
 
-        self.test_inline_additional_properties = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake/inline-additionalProperties',
-                'operation_id': 'test_inline_additional_properties',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'request_body',
-                ],
-                'required': [
-                    'request_body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_inline_additional_properties is None:
+            self.test_inline_additional_properties = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake/inline-additionalProperties',
+                    'operation_id': 'test_inline_additional_properties',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'request_body',
+                    ],
+                    'required': [
+                        'request_body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'request_body':
-                        ({str: (str,)},),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'request_body':
+                            ({str: (str,)},),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'request_body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'request_body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_inline_additional_properties
-        )
+                api_client=api_client,
+                callable=__test_inline_additional_properties
+            )
 
         def __test_json_form_data(
             self,
@@ -2897,62 +2919,63 @@ class FakeApi(object):
                 param2
             return self.call_with_http_info(**kwargs)
 
-        self.test_json_form_data = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake/jsonFormData',
-                'operation_id': 'test_json_form_data',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'param',
-                    'param2',
-                ],
-                'required': [
-                    'param',
-                    'param2',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_json_form_data is None:
+            self.test_json_form_data = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake/jsonFormData',
+                    'operation_id': 'test_json_form_data',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'param',
+                        'param2',
+                    ],
+                    'required': [
+                        'param',
+                        'param2',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'param':
-                        (str,),
-                    'param2':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'param':
+                            (str,),
+                        'param2':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'param': 'param',
+                        'param2': 'param2',
+                    },
+                    'location_map': {
+                        'param': 'form',
+                        'param2': 'form',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'param': 'param',
-                    'param2': 'param2',
+                headers_map={
+                    'accept': [],
+                    'content_type': [
+                        'application/x-www-form-urlencoded'
+                    ]
                 },
-                'location_map': {
-                    'param': 'form',
-                    'param2': 'form',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/x-www-form-urlencoded'
-                ]
-            },
-            api_client=api_client,
-            callable=__test_json_form_data
-        )
+                api_client=api_client,
+                callable=__test_json_form_data
+            )
 
         def __test_query_parameter_collection_format(
             self,
@@ -3036,83 +3059,84 @@ class FakeApi(object):
                 context
             return self.call_with_http_info(**kwargs)
 
-        self.test_query_parameter_collection_format = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/fake/test-query-paramters',
-                'operation_id': 'test_query_parameter_collection_format',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'pipe',
-                    'ioutil',
-                    'http',
-                    'url',
-                    'context',
-                ],
-                'required': [
-                    'pipe',
-                    'ioutil',
-                    'http',
-                    'url',
-                    'context',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.test_query_parameter_collection_format is None:
+            self.test_query_parameter_collection_format = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/fake/test-query-paramters',
+                    'operation_id': 'test_query_parameter_collection_format',
+                    'http_method': 'PUT',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'pipe',
+                        'ioutil',
+                        'http',
+                        'url',
+                        'context',
+                    ],
+                    'required': [
+                        'pipe',
+                        'ioutil',
+                        'http',
+                        'url',
+                        'context',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'pipe':
-                        ([str],),
-                    'ioutil':
-                        ([str],),
-                    'http':
-                        ([str],),
-                    'url':
-                        ([str],),
-                    'context':
-                        ([str],),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'pipe':
+                            ([str],),
+                        'ioutil':
+                            ([str],),
+                        'http':
+                            ([str],),
+                        'url':
+                            ([str],),
+                        'context':
+                            ([str],),
+                    },
+                    'attribute_map': {
+                        'pipe': 'pipe',
+                        'ioutil': 'ioutil',
+                        'http': 'http',
+                        'url': 'url',
+                        'context': 'context',
+                    },
+                    'location_map': {
+                        'pipe': 'query',
+                        'ioutil': 'query',
+                        'http': 'query',
+                        'url': 'query',
+                        'context': 'query',
+                    },
+                    'collection_format_map': {
+                        'pipe': 'multi',
+                        'ioutil': 'csv',
+                        'http': 'ssv',
+                        'url': 'csv',
+                        'context': 'multi',
+                    }
                 },
-                'attribute_map': {
-                    'pipe': 'pipe',
-                    'ioutil': 'ioutil',
-                    'http': 'http',
-                    'url': 'url',
-                    'context': 'context',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'pipe': 'query',
-                    'ioutil': 'query',
-                    'http': 'query',
-                    'url': 'query',
-                    'context': 'query',
-                },
-                'collection_format_map': {
-                    'pipe': 'multi',
-                    'ioutil': 'csv',
-                    'http': 'ssv',
-                    'url': 'csv',
-                    'context': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__test_query_parameter_collection_format
-        )
+                api_client=api_client,
+                callable=__test_query_parameter_collection_format
+            )
 
         def __upload_download_file(
             self,
@@ -3179,57 +3203,58 @@ class FakeApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.upload_download_file = _Endpoint(
-            settings={
-                'response_type': (file_type,),
-                'auth': [],
-                'endpoint_path': '/fake/uploadDownloadFile',
-                'operation_id': 'upload_download_file',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.upload_download_file is None:
+            self.upload_download_file = _Endpoint(
+                settings={
+                    'response_type': (file_type,),
+                    'auth': [],
+                    'endpoint_path': '/fake/uploadDownloadFile',
+                    'operation_id': 'upload_download_file',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (file_type,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (file_type,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/octet-stream'
+                    ],
+                    'content_type': [
+                        'application/octet-stream'
+                    ]
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/octet-stream'
-                ],
-                'content_type': [
-                    'application/octet-stream'
-                ]
-            },
-            api_client=api_client,
-            callable=__upload_download_file
-        )
+                api_client=api_client,
+                callable=__upload_download_file
+            )
 
         def __upload_file(
             self,
@@ -3297,63 +3322,64 @@ class FakeApi(object):
                 file
             return self.call_with_http_info(**kwargs)
 
-        self.upload_file = _Endpoint(
-            settings={
-                'response_type': (ApiResponse,),
-                'auth': [],
-                'endpoint_path': '/fake/uploadFile',
-                'operation_id': 'upload_file',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'file',
-                    'additional_metadata',
-                ],
-                'required': [
-                    'file',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.upload_file is None:
+            self.upload_file = _Endpoint(
+                settings={
+                    'response_type': (ApiResponse,),
+                    'auth': [],
+                    'endpoint_path': '/fake/uploadFile',
+                    'operation_id': 'upload_file',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'file',
+                        'additional_metadata',
+                    ],
+                    'required': [
+                        'file',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'file':
-                        (file_type,),
-                    'additional_metadata':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'file':
+                            (file_type,),
+                        'additional_metadata':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'file': 'file',
+                        'additional_metadata': 'additionalMetadata',
+                    },
+                    'location_map': {
+                        'file': 'form',
+                        'additional_metadata': 'form',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'file': 'file',
-                    'additional_metadata': 'additionalMetadata',
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'multipart/form-data'
+                    ]
                 },
-                'location_map': {
-                    'file': 'form',
-                    'additional_metadata': 'form',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'multipart/form-data'
-                ]
-            },
-            api_client=api_client,
-            callable=__upload_file
-        )
+                api_client=api_client,
+                callable=__upload_file
+            )
 
         def __upload_files(
             self,
@@ -3416,54 +3442,83 @@ class FakeApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.upload_files = _Endpoint(
-            settings={
-                'response_type': (ApiResponse,),
-                'auth': [],
-                'endpoint_path': '/fake/uploadFiles',
-                'operation_id': 'upload_files',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'files',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.upload_files is None:
+            self.upload_files = _Endpoint(
+                settings={
+                    'response_type': (ApiResponse,),
+                    'auth': [],
+                    'endpoint_path': '/fake/uploadFiles',
+                    'operation_id': 'upload_files',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'files',
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'files':
-                        ([file_type],),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'files':
+                            ([file_type],),
+                    },
+                    'attribute_map': {
+                        'files': 'files',
+                    },
+                    'location_map': {
+                        'files': 'form',
+                    },
+                    'collection_format_map': {
+                        'files': 'csv',
+                    }
                 },
-                'attribute_map': {
-                    'files': 'files',
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'multipart/form-data'
+                    ]
                 },
-                'location_map': {
-                    'files': 'form',
-                },
-                'collection_format_map': {
-                    'files': 'csv',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'multipart/form-data'
-                ]
-            },
-            api_client=api_client,
-            callable=__upload_files
-        )
+                api_client=api_client,
+                callable=__upload_files
+            )
+
+    additional_properties_with_array_of_enums = None 
+    array_model = None 
+    array_of_enums = None 
+    boolean = None 
+    composed_one_of_number_with_validations = None 
+    download_attachment = None 
+    enum_test = None 
+    fake_health_get = None 
+    mammal = None 
+    number_with_validations = None 
+    object_model_with_ref_props = None 
+    post_inline_additional_properties_payload = None 
+    post_inline_additional_properties_ref_payload = None 
+    string = None 
+    string_enum = None 
+    test_body_with_file_schema = None 
+    test_body_with_query_params = None 
+    test_client_model = None 
+    test_endpoint_parameters = None 
+    test_enum_parameters = None 
+    test_group_parameters = None 
+    test_inline_additional_properties = None 
+    test_json_form_data = None 
+    test_query_parameter_collection_format = None 
+    upload_download_file = None 
+    upload_file = None 
+    upload_files = None 

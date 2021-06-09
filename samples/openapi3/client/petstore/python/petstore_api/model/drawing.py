@@ -70,6 +70,38 @@ class Drawing(ModelNormal):
     validations = {
     }
 
+    @property
+    def main_shape(self):
+       return self.get("main_shape")
+
+    @main_shape.setter
+    def main_shape(self, new_value):
+       self.main_shape = new_value
+
+    @property
+    def shape_or_null(self):
+       return self.get("shape_or_null")
+
+    @shape_or_null.setter
+    def shape_or_null(self, new_value):
+       self.shape_or_null = new_value
+
+    @property
+    def nullable_shape(self):
+       return self.get("nullable_shape")
+
+    @nullable_shape.setter
+    def nullable_shape(self, new_value):
+       self.nullable_shape = new_value
+
+    @property
+    def shapes(self):
+       return self.get("shapes")
+
+    @shapes.setter
+    def shapes(self, new_value):
+       self.shapes = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -102,6 +134,7 @@ class Drawing(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -193,7 +226,10 @@ class Drawing(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -277,3 +313,4 @@ class Drawing(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

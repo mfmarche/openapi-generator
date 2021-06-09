@@ -68,6 +68,22 @@ class EnumArrays(ModelNormal):
     validations = {
     }
 
+    @property
+    def just_symbol(self):
+       return self.get("just_symbol")
+
+    @just_symbol.setter
+    def just_symbol(self, new_value):
+       self.just_symbol = new_value
+
+    @property
+    def array_enum(self):
+       return self.get("array_enum")
+
+    @array_enum.setter
+    def array_enum(self, new_value):
+       self.array_enum = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -96,6 +112,7 @@ class EnumArrays(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -183,7 +200,10 @@ class EnumArrays(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -265,3 +285,4 @@ class EnumArrays(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

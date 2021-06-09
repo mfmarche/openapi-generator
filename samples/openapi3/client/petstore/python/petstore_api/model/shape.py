@@ -66,6 +66,22 @@ class Shape(ModelComposed):
     validations = {
     }
 
+    @property
+    def shape_type(self):
+       return self.get("shape_type")
+
+    @shape_type.setter
+    def shape_type(self, new_value):
+       self.shape_type = new_value
+
+    @property
+    def quadrilateral_type(self):
+       return self.get("quadrilateral_type")
+
+    @quadrilateral_type.setter
+    def quadrilateral_type(self, new_value):
+       self.quadrilateral_type = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -104,6 +120,7 @@ class Shape(ModelComposed):
         if not val:
             return None
         return {'shape_type': val}
+
 
     attribute_map = {
         'shape_type': 'shapeType',  # noqa: E501
@@ -188,7 +205,7 @@ class Shape(ModelComposed):
             '_visited_composed_classes': self._visited_composed_classes,
         }
         composed_info = validate_get_composed_info(
-            constant_args, kwargs, self)
+            constant_args, kwargs, self, from_openapi_data=True)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -205,7 +222,11 @@ class Shape(ModelComposed):
 
         return self
 
-    required_properties = set([
+
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -305,6 +326,7 @@ class Shape(ModelComposed):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+
 
     @cached_property
     def _composed_schemas():

@@ -102,54 +102,57 @@ class AnotherFakeApi(object):
                 client
             return self.call_with_http_info(**kwargs)
 
-        self.call_123_test_special_tags = _Endpoint(
-            settings={
-                'response_type': (Client,),
-                'auth': [],
-                'endpoint_path': '/another-fake/dummy',
-                'operation_id': 'call_123_test_special_tags',
-                'http_method': 'PATCH',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'client',
-                ],
-                'required': [
-                    'client',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.call_123_test_special_tags is None:
+            self.call_123_test_special_tags = _Endpoint(
+                settings={
+                    'response_type': (Client,),
+                    'auth': [],
+                    'endpoint_path': '/another-fake/dummy',
+                    'operation_id': 'call_123_test_special_tags',
+                    'http_method': 'PATCH',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'client',
+                    ],
+                    'required': [
+                        'client',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'client':
-                        (Client,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'client':
+                            (Client,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'client': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [
+                        'application/json'
+                    ]
                 },
-                'location_map': {
-                    'client': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client,
-            callable=__call_123_test_special_tags
-        )
+                api_client=api_client,
+                callable=__call_123_test_special_tags
+            )
+
+    call_123_test_special_tags = None 

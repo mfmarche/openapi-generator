@@ -96,46 +96,49 @@ class DefaultApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.foo_get = _Endpoint(
-            settings={
-                'response_type': (InlineResponseDefault,),
-                'auth': [],
-                'endpoint_path': '/foo',
-                'operation_id': 'foo_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.foo_get is None:
+            self.foo_get = _Endpoint(
+                settings={
+                    'response_type': (InlineResponseDefault,),
+                    'auth': [],
+                    'endpoint_path': '/foo',
+                    'operation_id': 'foo_get',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__foo_get
-        )
+                api_client=api_client,
+                callable=__foo_get
+            )
+
+    foo_get = None 

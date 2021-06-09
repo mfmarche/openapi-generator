@@ -60,6 +60,54 @@ class Capitalization(ModelNormal):
     validations = {
     }
 
+    @property
+    def small_camel(self):
+       return self.get("small_camel")
+
+    @small_camel.setter
+    def small_camel(self, new_value):
+       self.small_camel = new_value
+
+    @property
+    def capital_camel(self):
+       return self.get("capital_camel")
+
+    @capital_camel.setter
+    def capital_camel(self, new_value):
+       self.capital_camel = new_value
+
+    @property
+    def small_snake(self):
+       return self.get("small_snake")
+
+    @small_snake.setter
+    def small_snake(self, new_value):
+       self.small_snake = new_value
+
+    @property
+    def capital_snake(self):
+       return self.get("capital_snake")
+
+    @capital_snake.setter
+    def capital_snake(self, new_value):
+       self.capital_snake = new_value
+
+    @property
+    def sca_eth_flow_points(self):
+       return self.get("sca_eth_flow_points")
+
+    @sca_eth_flow_points.setter
+    def sca_eth_flow_points(self, new_value):
+       self.sca_eth_flow_points = new_value
+
+    @property
+    def att_name(self):
+       return self.get("att_name")
+
+    @att_name.setter
+    def att_name(self, new_value):
+       self.att_name = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -92,6 +140,7 @@ class Capitalization(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -187,7 +236,10 @@ class Capitalization(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -273,3 +325,4 @@ class Capitalization(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

@@ -102,53 +102,54 @@ class UserApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_user = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user',
-                'operation_id': 'create_user',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.create_user is None:
+            self.create_user = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user',
+                    'operation_id': 'create_user',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (User,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (User,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__create_user
-        )
+                api_client=api_client,
+                callable=__create_user
+            )
 
         def __create_users_with_array_input(
             self,
@@ -215,53 +216,54 @@ class UserApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_users_with_array_input = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user/createWithArray',
-                'operation_id': 'create_users_with_array_input',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.create_users_with_array_input is None:
+            self.create_users_with_array_input = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user/createWithArray',
+                    'operation_id': 'create_users_with_array_input',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        ([User],),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            ([User],),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__create_users_with_array_input
-        )
+                api_client=api_client,
+                callable=__create_users_with_array_input
+            )
 
         def __create_users_with_list_input(
             self,
@@ -328,53 +330,54 @@ class UserApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.create_users_with_list_input = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user/createWithList',
-                'operation_id': 'create_users_with_list_input',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.create_users_with_list_input is None:
+            self.create_users_with_list_input = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user/createWithList',
+                    'operation_id': 'create_users_with_list_input',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        ([User],),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            ([User],),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__create_users_with_list_input
-        )
+                api_client=api_client,
+                callable=__create_users_with_list_input
+            )
 
         def __delete_user(
             self,
@@ -442,54 +445,55 @@ class UserApi(object):
                 username
             return self.call_with_http_info(**kwargs)
 
-        self.delete_user = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user/{username}',
-                'operation_id': 'delete_user',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'username',
-                ],
-                'required': [
-                    'username',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.delete_user is None:
+            self.delete_user = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user/{username}',
+                    'operation_id': 'delete_user',
+                    'http_method': 'DELETE',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'username',
+                    ],
+                    'required': [
+                        'username',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'username':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'username':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'username': 'username',
+                    },
+                    'location_map': {
+                        'username': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'username': 'username',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'username': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__delete_user
-        )
+                api_client=api_client,
+                callable=__delete_user
+            )
 
         def __get_user_by_name(
             self,
@@ -556,57 +560,58 @@ class UserApi(object):
                 username
             return self.call_with_http_info(**kwargs)
 
-        self.get_user_by_name = _Endpoint(
-            settings={
-                'response_type': (User,),
-                'auth': [],
-                'endpoint_path': '/user/{username}',
-                'operation_id': 'get_user_by_name',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'username',
-                ],
-                'required': [
-                    'username',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.get_user_by_name is None:
+            self.get_user_by_name = _Endpoint(
+                settings={
+                    'response_type': (User,),
+                    'auth': [],
+                    'endpoint_path': '/user/{username}',
+                    'operation_id': 'get_user_by_name',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'username',
+                    ],
+                    'required': [
+                        'username',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'username':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'username':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'username': 'username',
+                    },
+                    'location_map': {
+                        'username': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'username': 'username',
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'username': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_user_by_name
-        )
+                api_client=api_client,
+                callable=__get_user_by_name
+            )
 
         def __login_user(
             self,
@@ -677,63 +682,64 @@ class UserApi(object):
                 password
             return self.call_with_http_info(**kwargs)
 
-        self.login_user = _Endpoint(
-            settings={
-                'response_type': (str,),
-                'auth': [],
-                'endpoint_path': '/user/login',
-                'operation_id': 'login_user',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'username',
-                    'password',
-                ],
-                'required': [
-                    'username',
-                    'password',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.login_user is None:
+            self.login_user = _Endpoint(
+                settings={
+                    'response_type': (str,),
+                    'auth': [],
+                    'endpoint_path': '/user/login',
+                    'operation_id': 'login_user',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'username',
+                        'password',
+                    ],
+                    'required': [
+                        'username',
+                        'password',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'username':
-                        (str,),
-                    'password':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'username':
+                            (str,),
+                        'password':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'username': 'username',
+                        'password': 'password',
+                    },
+                    'location_map': {
+                        'username': 'query',
+                        'password': 'query',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'username': 'username',
-                    'password': 'password',
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'username': 'query',
-                    'password': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__login_user
-        )
+                api_client=api_client,
+                callable=__login_user
+            )
 
         def __logout_user(
             self,
@@ -795,47 +801,48 @@ class UserApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.logout_user = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user/logout',
-                'operation_id': 'logout_user',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.logout_user is None:
+            self.logout_user = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user/logout',
+                    'operation_id': 'logout_user',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__logout_user
-        )
+                api_client=api_client,
+                callable=__logout_user
+            )
 
         def __update_user(
             self,
@@ -907,56 +914,66 @@ class UserApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.update_user = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/user/{username}',
-                'operation_id': 'update_user',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'username',
-                    'body',
-                ],
-                'required': [
-                    'username',
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.update_user is None:
+            self.update_user = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/user/{username}',
+                    'operation_id': 'update_user',
+                    'http_method': 'PUT',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'username',
+                        'body',
+                    ],
+                    'required': [
+                        'username',
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'username':
-                        (str,),
-                    'body':
-                        (User,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'username':
+                            (str,),
+                        'body':
+                            (User,),
+                    },
+                    'attribute_map': {
+                        'username': 'username',
+                    },
+                    'location_map': {
+                        'username': 'path',
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'username': 'username',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'username': 'path',
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__update_user
-        )
+                api_client=api_client,
+                callable=__update_user
+            )
+
+    create_user = None 
+    create_users_with_array_input = None 
+    create_users_with_list_input = None 
+    delete_user = None 
+    get_user_by_name = None 
+    login_user = None 
+    logout_user = None 
+    update_user = None 

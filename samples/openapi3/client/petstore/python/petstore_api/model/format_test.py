@@ -103,6 +103,134 @@ class FormatTest(ModelNormal):
         },
     }
 
+    @property
+    def integer(self):
+       return self.get("integer")
+
+    @integer.setter
+    def integer(self, new_value):
+       self.integer = new_value
+
+    @property
+    def int32(self):
+       return self.get("int32")
+
+    @int32.setter
+    def int32(self, new_value):
+       self.int32 = new_value
+
+    @property
+    def int64(self):
+       return self.get("int64")
+
+    @int64.setter
+    def int64(self, new_value):
+       self.int64 = new_value
+
+    @property
+    def number(self):
+       return self.get("number")
+
+    @number.setter
+    def number(self, new_value):
+       self.number = new_value
+
+    @property
+    def float(self):
+       return self.get("float")
+
+    @float.setter
+    def float(self, new_value):
+       self.float = new_value
+
+    @property
+    def double(self):
+       return self.get("double")
+
+    @double.setter
+    def double(self, new_value):
+       self.double = new_value
+
+    @property
+    def string(self):
+       return self.get("string")
+
+    @string.setter
+    def string(self, new_value):
+       self.string = new_value
+
+    @property
+    def byte(self):
+       return self.get("byte")
+
+    @byte.setter
+    def byte(self, new_value):
+       self.byte = new_value
+
+    @property
+    def binary(self):
+       return self.get("binary")
+
+    @binary.setter
+    def binary(self, new_value):
+       self.binary = new_value
+
+    @property
+    def date(self):
+       return self.get("date")
+
+    @date.setter
+    def date(self, new_value):
+       self.date = new_value
+
+    @property
+    def date_time(self):
+       return self.get("date_time")
+
+    @date_time.setter
+    def date_time(self, new_value):
+       self.date_time = new_value
+
+    @property
+    def uuid(self):
+       return self.get("uuid")
+
+    @uuid.setter
+    def uuid(self, new_value):
+       self.uuid = new_value
+
+    @property
+    def uuid_no_example(self):
+       return self.get("uuid_no_example")
+
+    @uuid_no_example.setter
+    def uuid_no_example(self, new_value):
+       self.uuid_no_example = new_value
+
+    @property
+    def password(self):
+       return self.get("password")
+
+    @password.setter
+    def password(self, new_value):
+       self.password = new_value
+
+    @property
+    def pattern_with_digits(self):
+       return self.get("pattern_with_digits")
+
+    @pattern_with_digits.setter
+    def pattern_with_digits(self, new_value):
+       self.pattern_with_digits = new_value
+
+    @property
+    def pattern_with_digits_and_delimiter(self):
+       return self.get("pattern_with_digits_and_delimiter")
+
+    @pattern_with_digits_and_delimiter.setter
+    def pattern_with_digits_and_delimiter(self, new_value):
+       self.pattern_with_digits_and_delimiter = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -145,6 +273,7 @@ class FormatTest(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -266,7 +395,10 @@ class FormatTest(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -368,3 +500,4 @@ class FormatTest(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

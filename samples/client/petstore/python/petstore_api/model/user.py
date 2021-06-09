@@ -60,6 +60,70 @@ class User(ModelNormal):
     validations = {
     }
 
+    @property
+    def id(self):
+       return self.get("id")
+
+    @id.setter
+    def id(self, new_value):
+       self.id = new_value
+
+    @property
+    def username(self):
+       return self.get("username")
+
+    @username.setter
+    def username(self, new_value):
+       self.username = new_value
+
+    @property
+    def first_name(self):
+       return self.get("first_name")
+
+    @first_name.setter
+    def first_name(self, new_value):
+       self.first_name = new_value
+
+    @property
+    def last_name(self):
+       return self.get("last_name")
+
+    @last_name.setter
+    def last_name(self, new_value):
+       self.last_name = new_value
+
+    @property
+    def email(self):
+       return self.get("email")
+
+    @email.setter
+    def email(self, new_value):
+       self.email = new_value
+
+    @property
+    def password(self):
+       return self.get("password")
+
+    @password.setter
+    def password(self, new_value):
+       self.password = new_value
+
+    @property
+    def phone(self):
+       return self.get("phone")
+
+    @phone.setter
+    def phone(self, new_value):
+       self.phone = new_value
+
+    @property
+    def user_status(self):
+       return self.get("user_status")
+
+    @user_status.setter
+    def user_status(self, new_value):
+       self.user_status = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -94,6 +158,7 @@ class User(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -193,7 +258,10 @@ class User(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -281,3 +349,4 @@ class User(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

@@ -66,6 +66,14 @@ class Dog(ModelComposed):
     validations = {
     }
 
+    @property
+    def breed(self):
+       return self.get("breed")
+
+    @breed.setter
+    def breed(self, new_value):
+       self.breed = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -101,6 +109,7 @@ class Dog(ModelComposed):
         if not val:
             return None
         return {'class_name': val}
+
 
     attribute_map = {
         'class_name': 'className',  # noqa: E501
@@ -185,7 +194,7 @@ class Dog(ModelComposed):
             '_visited_composed_classes': self._visited_composed_classes,
         }
         composed_info = validate_get_composed_info(
-            constant_args, kwargs, self)
+            constant_args, kwargs, self, from_openapi_data=True)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -202,7 +211,11 @@ class Dog(ModelComposed):
 
         return self
 
-    required_properties = set([
+
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -302,6 +315,7 @@ class Dog(ModelComposed):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+
 
     @cached_property
     def _composed_schemas():

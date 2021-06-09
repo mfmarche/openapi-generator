@@ -60,6 +60,14 @@ class SomeObjectWithSelfAttr(ModelNormal):
     validations = {
     }
 
+    @property
+    def _self(self):
+       return self.get("_self")
+
+    @_self.setter
+    def _self(self, new_value):
+       self._self = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -87,6 +95,7 @@ class SomeObjectWithSelfAttr(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -172,7 +181,10 @@ class SomeObjectWithSelfAttr(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -253,3 +265,4 @@ class SomeObjectWithSelfAttr(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

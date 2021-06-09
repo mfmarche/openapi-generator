@@ -60,6 +60,70 @@ class AdditionalPropertiesClass(ModelNormal):
     validations = {
     }
 
+    @property
+    def map_property(self):
+       return self.get("map_property")
+
+    @map_property.setter
+    def map_property(self, new_value):
+       self.map_property = new_value
+
+    @property
+    def map_of_map_property(self):
+       return self.get("map_of_map_property")
+
+    @map_of_map_property.setter
+    def map_of_map_property(self, new_value):
+       self.map_of_map_property = new_value
+
+    @property
+    def anytype_1(self):
+       return self.get("anytype_1")
+
+    @anytype_1.setter
+    def anytype_1(self, new_value):
+       self.anytype_1 = new_value
+
+    @property
+    def map_with_undeclared_properties_anytype_1(self):
+       return self.get("map_with_undeclared_properties_anytype_1")
+
+    @map_with_undeclared_properties_anytype_1.setter
+    def map_with_undeclared_properties_anytype_1(self, new_value):
+       self.map_with_undeclared_properties_anytype_1 = new_value
+
+    @property
+    def map_with_undeclared_properties_anytype_2(self):
+       return self.get("map_with_undeclared_properties_anytype_2")
+
+    @map_with_undeclared_properties_anytype_2.setter
+    def map_with_undeclared_properties_anytype_2(self, new_value):
+       self.map_with_undeclared_properties_anytype_2 = new_value
+
+    @property
+    def map_with_undeclared_properties_anytype_3(self):
+       return self.get("map_with_undeclared_properties_anytype_3")
+
+    @map_with_undeclared_properties_anytype_3.setter
+    def map_with_undeclared_properties_anytype_3(self, new_value):
+       self.map_with_undeclared_properties_anytype_3 = new_value
+
+    @property
+    def empty_map(self):
+       return self.get("empty_map")
+
+    @empty_map.setter
+    def empty_map(self, new_value):
+       self.empty_map = new_value
+
+    @property
+    def map_with_undeclared_properties_string(self):
+       return self.get("map_with_undeclared_properties_string")
+
+    @map_with_undeclared_properties_string.setter
+    def map_with_undeclared_properties_string(self, new_value):
+       self.map_with_undeclared_properties_string = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -94,6 +158,7 @@ class AdditionalPropertiesClass(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -193,7 +258,10 @@ class AdditionalPropertiesClass(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -281,3 +349,4 @@ class AdditionalPropertiesClass(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

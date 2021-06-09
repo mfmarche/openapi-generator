@@ -91,13 +91,17 @@ class AnimalFarm(ModelSimple):
         return None
 
 
+
     attribute_map = {}
 
     read_only_vars = set()
 
     _composed_schemas = None
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -194,6 +198,7 @@ class AnimalFarm(ModelSimple):
                 path_to_item=_path_to_item,
                 valid_classes=(self.__class__,),
             )
+
 
     @classmethod
     @convert_js_args_to_python_args

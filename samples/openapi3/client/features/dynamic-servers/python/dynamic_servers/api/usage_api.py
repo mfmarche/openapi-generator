@@ -96,98 +96,99 @@ class UsageApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.custom_server = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/custom',
-                'operation_id': 'custom_server',
-                'http_method': 'GET',
-                'servers': [
-                    {
-                        'url': "https://{server}.swagger.io:{port}/v2",
-                        'description': "No description provided",
-                        'variables': {
-                            'server': {
-                                'description': "No description provided",
-                                'default_value': "custom-petstore",
-                                'enum_values': [
-                                    "custom-petstore",
-                                    "custom-qa-petstore",
-                                    "custom-dev-petstore"
-                                ]
-                                },
-                            'port': {
-                                'description': "No description provided",
-                                'default_value': "8080",
-                                'enum_values': [
-                                    "80",
-                                    "8080"
-                                ]
+        if self.custom_server is None:
+            self.custom_server = _Endpoint(
+                settings={
+                    'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'auth': [],
+                    'endpoint_path': '/custom',
+                    'operation_id': 'custom_server',
+                    'http_method': 'GET',
+                    'servers': [
+                        {
+                            'url': "https://{server}.swagger.io:{port}/v2",
+                            'description': "No description provided",
+                            'variables': {
+                                'server': {
+                                    'description': "No description provided",
+                                    'default_value': "custom-petstore",
+                                    'enum_values': [
+                                        "custom-petstore",
+                                        "custom-qa-petstore",
+                                        "custom-dev-petstore"
+                                    ]
+                                    },
+                                'port': {
+                                    'description': "No description provided",
+                                    'default_value': "8080",
+                                    'enum_values': [
+                                        "80",
+                                        "8080"
+                                    ]
+                                    }
                                 }
-                            }
-                    },
-                    {
-                        'url': "https://localhost:8081/{version}",
-                        'description': "The local custom server",
-                        'variables': {
-                            'version': {
-                                'description': "No description provided",
-                                'default_value': "v2",
-                                'enum_values': [
-                                    "v1",
-                                    "v2",
-                                    "v3"
-                                ]
+                        },
+                        {
+                            'url': "https://localhost:8081/{version}",
+                            'description': "The local custom server",
+                            'variables': {
+                                'version': {
+                                    'description': "No description provided",
+                                    'default_value': "v2",
+                                    'enum_values': [
+                                        "v1",
+                                        "v2",
+                                        "v3"
+                                    ]
+                                    }
                                 }
-                            }
-                    },
-                    {
-                        'url': "https://third.example.com/{prefix}",
-                        'description': "The local custom server",
-                        'variables': {
-                            'prefix': {
-                                'description': "No description provided",
-                                'default_value': "custom",
+                        },
+                        {
+                            'url': "https://third.example.com/{prefix}",
+                            'description': "The local custom server",
+                            'variables': {
+                                'prefix': {
+                                    'description': "No description provided",
+                                    'default_value': "custom",
+                                    }
                                 }
-                            }
+                        },
+                    ]
+                },
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
+                },
+                root_map={
+                    'validations': {
                     },
-                ]
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__custom_server
-        )
+                api_client=api_client,
+                callable=__custom_server
+            )
 
         def __default_server(
             self,
@@ -250,46 +251,50 @@ class UsageApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.default_server = _Endpoint(
-            settings={
-                'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
-                'auth': [],
-                'endpoint_path': '/default',
-                'operation_id': 'default_server',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.default_server is None:
+            self.default_server = _Endpoint(
+                settings={
+                    'response_type': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),
+                    'auth': [],
+                    'endpoint_path': '/default',
+                    'operation_id': 'default_server',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__default_server
-        )
+                api_client=api_client,
+                callable=__default_server
+            )
+
+    custom_server = None 
+    default_server = None 

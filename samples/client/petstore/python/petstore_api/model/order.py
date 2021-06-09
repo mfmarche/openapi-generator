@@ -65,6 +65,54 @@ class Order(ModelNormal):
     validations = {
     }
 
+    @property
+    def id(self):
+       return self.get("id")
+
+    @id.setter
+    def id(self, new_value):
+       self.id = new_value
+
+    @property
+    def pet_id(self):
+       return self.get("pet_id")
+
+    @pet_id.setter
+    def pet_id(self, new_value):
+       self.pet_id = new_value
+
+    @property
+    def quantity(self):
+       return self.get("quantity")
+
+    @quantity.setter
+    def quantity(self, new_value):
+       self.quantity = new_value
+
+    @property
+    def ship_date(self):
+       return self.get("ship_date")
+
+    @ship_date.setter
+    def ship_date(self, new_value):
+       self.ship_date = new_value
+
+    @property
+    def status(self):
+       return self.get("status")
+
+    @status.setter
+    def status(self, new_value):
+       self.status = new_value
+
+    @property
+    def complete(self):
+       return self.get("complete")
+
+    @complete.setter
+    def complete(self, new_value):
+       self.complete = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -97,6 +145,7 @@ class Order(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -192,7 +241,10 @@ class Order(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -278,3 +330,4 @@ class Order(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

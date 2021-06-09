@@ -102,54 +102,55 @@ class StoreApi(object):
                 order_id
             return self.call_with_http_info(**kwargs)
 
-        self.delete_order = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [],
-                'endpoint_path': '/store/order/{order_id}',
-                'operation_id': 'delete_order',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'order_id',
-                ],
-                'required': [
-                    'order_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.delete_order is None:
+            self.delete_order = _Endpoint(
+                settings={
+                    'response_type': None,
+                    'auth': [],
+                    'endpoint_path': '/store/order/{order_id}',
+                    'operation_id': 'delete_order',
+                    'http_method': 'DELETE',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'order_id',
+                    ],
+                    'required': [
+                        'order_id',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'order_id':
-                        (str,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'order_id':
+                            (str,),
+                    },
+                    'attribute_map': {
+                        'order_id': 'order_id',
+                    },
+                    'location_map': {
+                        'order_id': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
-                    'order_id': 'order_id',
+                headers_map={
+                    'accept': [],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'order_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__delete_order
-        )
+                api_client=api_client,
+                callable=__delete_order
+            )
 
         def __get_inventory(
             self,
@@ -212,51 +213,52 @@ class StoreApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.get_inventory = _Endpoint(
-            settings={
-                'response_type': ({str: (int,)},),
-                'auth': [
-                    'api_key'
-                ],
-                'endpoint_path': '/store/inventory',
-                'operation_id': 'get_inventory',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.get_inventory is None:
+            self.get_inventory = _Endpoint(
+                settings={
+                    'response_type': ({str: (int,)},),
+                    'auth': [
+                        'api_key'
+                    ],
+                    'endpoint_path': '/store/inventory',
+                    'operation_id': 'get_inventory',
+                    'http_method': 'GET',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                    ],
+                    'required': [],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_inventory
-        )
+                api_client=api_client,
+                callable=__get_inventory
+            )
 
         def __get_order_by_id(
             self,
@@ -324,63 +326,64 @@ class StoreApi(object):
                 order_id
             return self.call_with_http_info(**kwargs)
 
-        self.get_order_by_id = _Endpoint(
-            settings={
-                'response_type': (Order,),
-                'auth': [],
-                'endpoint_path': '/store/order/{order_id}',
-                'operation_id': 'get_order_by_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'order_id',
-                ],
-                'required': [
-                    'order_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                    'order_id',
-                ]
-            },
-            root_map={
-                'validations': {
-                    ('order_id',): {
+        if self.get_order_by_id is None:
+            self.get_order_by_id = _Endpoint(
+                settings={
+                    'response_type': (Order,),
+                    'auth': [],
+                    'endpoint_path': '/store/order/{order_id}',
+                    'operation_id': 'get_order_by_id',
+                    'http_method': 'GET',
+                    'servers': None,
+                },
+                params_map={
+                    'all': [
+                        'order_id',
+                    ],
+                    'required': [
+                        'order_id',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                        'order_id',
+                    ]
+                },
+                root_map={
+                    'validations': {
+                        ('order_id',): {
 
-                        'inclusive_maximum': 5,
-                        'inclusive_minimum': 1,
+                            'inclusive_maximum': 5,
+                            'inclusive_minimum': 1,
+                        },
                     },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'order_id':
+                            (int,),
+                    },
+                    'attribute_map': {
+                        'order_id': 'order_id',
+                    },
+                    'location_map': {
+                        'order_id': 'path',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'allowed_values': {
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'openapi_types': {
-                    'order_id':
-                        (int,),
-                },
-                'attribute_map': {
-                    'order_id': 'order_id',
-                },
-                'location_map': {
-                    'order_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_order_by_id
-        )
+                api_client=api_client,
+                callable=__get_order_by_id
+            )
 
         def __place_order(
             self,
@@ -447,53 +450,59 @@ class StoreApi(object):
                 body
             return self.call_with_http_info(**kwargs)
 
-        self.place_order = _Endpoint(
-            settings={
-                'response_type': (Order,),
-                'auth': [],
-                'endpoint_path': '/store/order',
-                'operation_id': 'place_order',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body',
-                ],
-                'required': [
-                    'body',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
+        if self.place_order is None:
+            self.place_order = _Endpoint(
+                settings={
+                    'response_type': (Order,),
+                    'auth': [],
+                    'endpoint_path': '/store/order',
+                    'operation_id': 'place_order',
+                    'http_method': 'POST',
+                    'servers': None,
                 },
-                'allowed_values': {
+                params_map={
+                    'all': [
+                        'body',
+                    ],
+                    'required': [
+                        'body',
+                    ],
+                    'nullable': [
+                    ],
+                    'enum': [
+                    ],
+                    'validation': [
+                    ]
                 },
-                'openapi_types': {
-                    'body':
-                        (Order,),
+                root_map={
+                    'validations': {
+                    },
+                    'allowed_values': {
+                    },
+                    'openapi_types': {
+                        'body':
+                            (Order,),
+                    },
+                    'attribute_map': {
+                    },
+                    'location_map': {
+                        'body': 'body',
+                    },
+                    'collection_format_map': {
+                    }
                 },
-                'attribute_map': {
+                headers_map={
+                    'accept': [
+                        'application/xml',
+                        'application/json'
+                    ],
+                    'content_type': [],
                 },
-                'location_map': {
-                    'body': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/xml',
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__place_order
-        )
+                api_client=api_client,
+                callable=__place_order
+            )
+
+    delete_order = None 
+    get_inventory = None 
+    get_order_by_id = None 
+    place_order = None 

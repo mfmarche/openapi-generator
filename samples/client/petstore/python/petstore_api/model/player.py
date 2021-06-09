@@ -60,6 +60,22 @@ class Player(ModelNormal):
     validations = {
     }
 
+    @property
+    def name(self):
+       return self.get("name")
+
+    @name.setter
+    def name(self, new_value):
+       self.name = new_value
+
+    @property
+    def enemy_player(self):
+       return self.get("enemy_player")
+
+    @enemy_player.setter
+    def enemy_player(self, new_value):
+       self.enemy_player = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -88,6 +104,7 @@ class Player(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -178,7 +195,10 @@ class Player(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -263,3 +283,4 @@ class Player(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

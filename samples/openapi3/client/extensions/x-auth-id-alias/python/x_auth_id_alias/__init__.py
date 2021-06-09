@@ -18,10 +18,16 @@ from x_auth_id_alias.api_client import ApiClient
 # import Configuration
 from x_auth_id_alias.configuration import Configuration
 
+from x_auth_id_alias.api.usage_api import UsageApi
+
+
 # import exceptions
 from x_auth_id_alias.exceptions import OpenApiException
-from x_auth_id_alias.exceptions import ApiAttributeError
+#from x_auth_id_alias.exceptions import ApiAttributeError
 from x_auth_id_alias.exceptions import ApiTypeError
 from x_auth_id_alias.exceptions import ApiValueError
 from x_auth_id_alias.exceptions import ApiKeyError
 from x_auth_id_alias.exceptions import ApiException
+
+
+

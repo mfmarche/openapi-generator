@@ -92,6 +92,94 @@ class EnumTest(ModelNormal):
     validations = {
     }
 
+    @property
+    def enum_string(self):
+       return self.get("enum_string")
+
+    @enum_string.setter
+    def enum_string(self, new_value):
+       self.enum_string = new_value
+
+    @property
+    def enum_string_required(self):
+       return self.get("enum_string_required")
+
+    @enum_string_required.setter
+    def enum_string_required(self, new_value):
+       self.enum_string_required = new_value
+
+    @property
+    def enum_integer(self):
+       return self.get("enum_integer")
+
+    @enum_integer.setter
+    def enum_integer(self, new_value):
+       self.enum_integer = new_value
+
+    @property
+    def enum_number(self):
+       return self.get("enum_number")
+
+    @enum_number.setter
+    def enum_number(self, new_value):
+       self.enum_number = new_value
+
+    @property
+    def string_enum(self):
+       return self.get("string_enum")
+
+    @string_enum.setter
+    def string_enum(self, new_value):
+       self.string_enum = new_value
+
+    @property
+    def integer_enum(self):
+       return self.get("integer_enum")
+
+    @integer_enum.setter
+    def integer_enum(self, new_value):
+       self.integer_enum = new_value
+
+    @property
+    def string_enum_with_default_value(self):
+       return self.get("string_enum_with_default_value")
+
+    @string_enum_with_default_value.setter
+    def string_enum_with_default_value(self, new_value):
+       self.string_enum_with_default_value = new_value
+
+    @property
+    def integer_enum_with_default_value(self):
+       return self.get("integer_enum_with_default_value")
+
+    @integer_enum_with_default_value.setter
+    def integer_enum_with_default_value(self, new_value):
+       self.integer_enum_with_default_value = new_value
+
+    @property
+    def integer_enum_one_value(self):
+       return self.get("integer_enum_one_value")
+
+    @integer_enum_one_value.setter
+    def integer_enum_one_value(self, new_value):
+       self.integer_enum_one_value = new_value
+
+    @property
+    def inline_array_of_str_enum(self):
+       return self.get("inline_array_of_str_enum")
+
+    @inline_array_of_str_enum.setter
+    def inline_array_of_str_enum(self, new_value):
+       self.inline_array_of_str_enum = new_value
+
+    @property
+    def array_of_str_enum(self):
+       return self.get("array_of_str_enum")
+
+    @array_of_str_enum.setter
+    def array_of_str_enum(self, new_value):
+       self.array_of_str_enum = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -131,6 +219,7 @@ class EnumTest(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -239,7 +328,10 @@ class EnumTest(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -333,3 +425,4 @@ class EnumTest(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

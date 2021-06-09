@@ -60,6 +60,94 @@ class AdditionalPropertiesClass(ModelNormal):
     validations = {
     }
 
+    @property
+    def map_string(self):
+       return self.get("map_string")
+
+    @map_string.setter
+    def map_string(self, new_value):
+       self.map_string = new_value
+
+    @property
+    def map_number(self):
+       return self.get("map_number")
+
+    @map_number.setter
+    def map_number(self, new_value):
+       self.map_number = new_value
+
+    @property
+    def map_integer(self):
+       return self.get("map_integer")
+
+    @map_integer.setter
+    def map_integer(self, new_value):
+       self.map_integer = new_value
+
+    @property
+    def map_boolean(self):
+       return self.get("map_boolean")
+
+    @map_boolean.setter
+    def map_boolean(self, new_value):
+       self.map_boolean = new_value
+
+    @property
+    def map_array_integer(self):
+       return self.get("map_array_integer")
+
+    @map_array_integer.setter
+    def map_array_integer(self, new_value):
+       self.map_array_integer = new_value
+
+    @property
+    def map_array_anytype(self):
+       return self.get("map_array_anytype")
+
+    @map_array_anytype.setter
+    def map_array_anytype(self, new_value):
+       self.map_array_anytype = new_value
+
+    @property
+    def map_map_string(self):
+       return self.get("map_map_string")
+
+    @map_map_string.setter
+    def map_map_string(self, new_value):
+       self.map_map_string = new_value
+
+    @property
+    def map_map_anytype(self):
+       return self.get("map_map_anytype")
+
+    @map_map_anytype.setter
+    def map_map_anytype(self, new_value):
+       self.map_map_anytype = new_value
+
+    @property
+    def anytype_1(self):
+       return self.get("anytype_1")
+
+    @anytype_1.setter
+    def anytype_1(self, new_value):
+       self.anytype_1 = new_value
+
+    @property
+    def anytype_2(self):
+       return self.get("anytype_2")
+
+    @anytype_2.setter
+    def anytype_2(self, new_value):
+       self.anytype_2 = new_value
+
+    @property
+    def anytype_3(self):
+       return self.get("anytype_3")
+
+    @anytype_3.setter
+    def anytype_3(self, new_value):
+       self.anytype_3 = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -97,6 +185,7 @@ class AdditionalPropertiesClass(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -202,7 +291,10 @@ class AdditionalPropertiesClass(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -293,3 +385,4 @@ class AdditionalPropertiesClass(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

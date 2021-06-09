@@ -60,6 +60,110 @@ class NullableClass(ModelNormal):
     validations = {
     }
 
+    @property
+    def integer_prop(self):
+       return self.get("integer_prop")
+
+    @integer_prop.setter
+    def integer_prop(self, new_value):
+       self.integer_prop = new_value
+
+    @property
+    def number_prop(self):
+       return self.get("number_prop")
+
+    @number_prop.setter
+    def number_prop(self, new_value):
+       self.number_prop = new_value
+
+    @property
+    def boolean_prop(self):
+       return self.get("boolean_prop")
+
+    @boolean_prop.setter
+    def boolean_prop(self, new_value):
+       self.boolean_prop = new_value
+
+    @property
+    def string_prop(self):
+       return self.get("string_prop")
+
+    @string_prop.setter
+    def string_prop(self, new_value):
+       self.string_prop = new_value
+
+    @property
+    def date_prop(self):
+       return self.get("date_prop")
+
+    @date_prop.setter
+    def date_prop(self, new_value):
+       self.date_prop = new_value
+
+    @property
+    def datetime_prop(self):
+       return self.get("datetime_prop")
+
+    @datetime_prop.setter
+    def datetime_prop(self, new_value):
+       self.datetime_prop = new_value
+
+    @property
+    def array_nullable_prop(self):
+       return self.get("array_nullable_prop")
+
+    @array_nullable_prop.setter
+    def array_nullable_prop(self, new_value):
+       self.array_nullable_prop = new_value
+
+    @property
+    def array_and_items_nullable_prop(self):
+       return self.get("array_and_items_nullable_prop")
+
+    @array_and_items_nullable_prop.setter
+    def array_and_items_nullable_prop(self, new_value):
+       self.array_and_items_nullable_prop = new_value
+
+    @property
+    def array_items_nullable(self):
+       return self.get("array_items_nullable")
+
+    @array_items_nullable.setter
+    def array_items_nullable(self, new_value):
+       self.array_items_nullable = new_value
+
+    @property
+    def object_nullable(self):
+       return self.get("object_nullable")
+
+    @object_nullable.setter
+    def object_nullable(self, new_value):
+       self.object_nullable = new_value
+
+    @property
+    def object_nullable_prop(self):
+       return self.get("object_nullable_prop")
+
+    @object_nullable_prop.setter
+    def object_nullable_prop(self, new_value):
+       self.object_nullable_prop = new_value
+
+    @property
+    def object_and_items_nullable_prop(self):
+       return self.get("object_and_items_nullable_prop")
+
+    @object_and_items_nullable_prop.setter
+    def object_and_items_nullable_prop(self, new_value):
+       self.object_and_items_nullable_prop = new_value
+
+    @property
+    def object_items_nullable(self):
+       return self.get("object_items_nullable")
+
+    @object_items_nullable.setter
+    def object_items_nullable(self, new_value):
+       self.object_items_nullable = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -99,6 +203,7 @@ class NullableClass(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -208,7 +313,10 @@ class NullableClass(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -301,3 +409,4 @@ class NullableClass(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

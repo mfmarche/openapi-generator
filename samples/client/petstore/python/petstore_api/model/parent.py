@@ -66,6 +66,22 @@ class Parent(ModelComposed):
     validations = {
     }
 
+    @property
+    def radio_waves(self):
+       return self.get("radio_waves")
+
+    @radio_waves.setter
+    def radio_waves(self, new_value):
+       self.radio_waves = new_value
+
+    @property
+    def tele_vision(self):
+       return self.get("tele_vision")
+
+    @tele_vision.setter
+    def tele_vision(self, new_value):
+       self.tele_vision = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -96,6 +112,7 @@ class Parent(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -179,7 +196,7 @@ class Parent(ModelComposed):
             '_visited_composed_classes': self._visited_composed_classes,
         }
         composed_info = validate_get_composed_info(
-            constant_args, kwargs, self)
+            constant_args, kwargs, self, from_openapi_data=True)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -196,7 +213,11 @@ class Parent(ModelComposed):
 
         return self
 
-    required_properties = set([
+
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -295,6 +316,7 @@ class Parent(ModelComposed):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+
 
     @cached_property
     def _composed_schemas():

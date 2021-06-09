@@ -70,6 +70,14 @@ class GrandparentAnimal(ModelNormal):
     validations = {
     }
 
+    @property
+    def pet_type(self):
+       return self.get("pet_type")
+
+    @pet_type.setter
+    def pet_type(self, new_value):
+       self.pet_type = new_value
+
     additional_properties_type = None
 
     _nullable = False
@@ -101,6 +109,7 @@ class GrandparentAnimal(ModelNormal):
         if not val:
             return None
         return {'pet_type': val}
+
 
     attribute_map = {
         'pet_type': 'pet_type',  # noqa: E501
@@ -188,7 +197,10 @@ class GrandparentAnimal(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -272,3 +284,4 @@ class GrandparentAnimal(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

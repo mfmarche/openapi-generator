@@ -60,6 +60,14 @@ class QuadrilateralInterface(ModelNormal):
     validations = {
     }
 
+    @property
+    def quadrilateral_type(self):
+       return self.get("quadrilateral_type")
+
+    @quadrilateral_type.setter
+    def quadrilateral_type(self, new_value):
+       self.quadrilateral_type = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -87,6 +95,7 @@ class QuadrilateralInterface(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -175,7 +184,10 @@ class QuadrilateralInterface(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -259,3 +271,4 @@ class QuadrilateralInterface(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

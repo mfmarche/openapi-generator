@@ -9,6 +9,7 @@
 
 
 from datetime import date, datetime  # noqa: F401
+from copy import deepcopy
 import inspect
 import io
 import os
@@ -101,7 +102,7 @@ def composed_model_input_classes(cls):
         if cls.discriminator is None:
             return [cls]
         else:
-            return get_discriminated_classes(cls)
+            return get_discriminated_classes(cls, [], [])
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas['oneOf']:
             return []
@@ -111,7 +112,7 @@ def composed_model_input_classes(cls):
                 input_classes.extend(composed_model_input_classes(c))
             return input_classes
         else:
-            return get_discriminated_classes(cls)
+            return get_discriminated_classes(cls, [], [])
     return []
 
 
@@ -185,6 +186,26 @@ class OpenApiModel(object):
     def __getattr__(self, attr):
         """get the value of an attribute using dot notation: `instance.attr`"""
         return self.__getitem__(attr)
+
+    def __copy__(self):
+        cls = self.__class__
+        result = cls.__new__(cls)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    def __deepcopy__(self, memo):
+        cls = self.__class__
+        kwargs = {}
+        if self.discriminator:
+            key = list(cls.discriminator.keys())[0]
+            kwargs[key] = self.get(key)
+
+        result = cls.__new__(cls, **kwargs)
+
+        for k, v in self.__dict__.items():
+            setattr(result, k, deepcopy(v, memo))
+        return result
+
 
     def __new__(cls, *args, **kwargs):
         # this function uses the discriminator to
@@ -296,7 +317,7 @@ class OpenApiModel(object):
             self_inst.__init__(*args, **kwargs)
 
         new_inst = new_cls.__new__(new_cls, *args, **kwargs)
-        new_inst.__init__(*args, **kwargs)
+        new_inst = new_inst._from_openapi_data(*args, **kwargs)
         return new_inst
 
 
@@ -452,6 +473,14 @@ class ModelSimple(OpenApiModel):
 
         return name in self.__dict__['_data_store']
 
+    def __delitem__(self, name):
+        """delete an attribute using: `del instance[attr]`"""
+        if name in self.required_properties:
+            self.__dict__.pop(name, None)
+            return
+        self.__dict__['_data_store'].pop(name, None)
+
+
     def to_str(self):
         """Returns the string representation of the model"""
         return str(self.value)
@@ -506,6 +535,14 @@ class ModelNormal(OpenApiModel):
             return name in self.__dict__
 
         return name in self.__dict__['_data_store']
+
+    def __delitem__(self, name):
+        """delete an attribute using: `del instance[attr]`"""
+        if name in self.required_properties:
+            self.__dict__.pop(name, None)
+            return
+        self.__dict__['_data_store'].pop(name, None)
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -662,6 +699,7 @@ class ModelComposed(OpenApiModel):
                     return True
 
         return False
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -1096,18 +1134,19 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
             results_classes.append(required_type_class)
     return results_classes
 
-def get_discriminated_classes(cls):
+def get_discriminated_classes(cls, seen_discriminator, possible_classes):
     """
     Returns all the classes that a discriminator converts to
     TODO: lru_cache this
     """
-    possible_classes = []
     key = list(cls.discriminator.keys())[0]
     if is_type_nullable(cls):
         possible_classes.append(cls)
     for discr_cls in cls.discriminator[key].values():
         if hasattr(discr_cls, 'discriminator') and discr_cls.discriminator is not None:
-            possible_classes.extend(get_discriminated_classes(discr_cls))
+            if not discr_cls in seen_discriminator:
+                seen_discriminator.append(discr_cls)
+                get_discriminated_classes(discr_cls, seen_discriminator, possible_classes)
         else:
             possible_classes.append(discr_cls)
     return possible_classes
@@ -1120,7 +1159,8 @@ def get_possible_classes(cls, from_server_context):
         return possible_classes
     if hasattr(cls, 'discriminator') and cls.discriminator is not None:
         possible_classes = []
-        possible_classes.extend(get_discriminated_classes(cls))
+        seen_discriminator = []
+        get_discriminated_classes(cls, seen_discriminator, possible_classes)
     elif issubclass(cls, ModelComposed):
         possible_classes.extend(composed_model_input_classes(cls))
     return possible_classes
@@ -1726,7 +1766,7 @@ def get_valid_classes_phrase(input_classes):
     return "is one of [{0}]".format(", ".join(all_class_names))
 
 
-def get_allof_instances(self, model_args, constant_args):
+def get_allof_instances(self, model_args, constant_args, from_openapi_data=False):
     """
     Args:
         self: the class we are handling
@@ -1747,7 +1787,10 @@ def get_allof_instances(self, model_args, constant_args):
     for allof_class in self._composed_schemas['allOf']:
 
         try:
-            allof_instance = allof_class(**model_args, **constant_args)
+            if from_openapi_data:
+                allof_instance = allof_class._from_openapi_data(**model_args, **constant_args)
+            else:
+                allof_instance = allof_class(**model_args, **constant_args)
             composed_instances.append(allof_instance)
         except Exception as ex:
             raise ApiValueError(
@@ -1910,7 +1953,7 @@ def get_discarded_args(self, composed_instances, model_args):
     return discarded_args
 
 
-def validate_get_composed_info(constant_args, model_args, self):
+def validate_get_composed_info(constant_args, model_args, self, from_openapi_data=False):
     """
     For composed schemas, generate schema instances for
     all schemas in the oneOf/anyOf/allOf definition. If additional
@@ -1944,7 +1987,7 @@ def validate_get_composed_info(constant_args, model_args, self):
     """
     # create composed_instances
     composed_instances = []
-    allof_instances = get_allof_instances(self, model_args, constant_args)
+    allof_instances = get_allof_instances(self, model_args, constant_args, from_openapi_data)
     composed_instances.extend(allof_instances)
     oneof_instance = get_oneof_instance(self.__class__, model_args, constant_args)
     if oneof_instance is not None:

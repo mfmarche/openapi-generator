@@ -66,6 +66,38 @@ class FruitReq(ModelComposed):
     validations = {
     }
 
+    @property
+    def cultivar(self):
+       return self.get("cultivar")
+
+    @cultivar.setter
+    def cultivar(self, new_value):
+       self.cultivar = new_value
+
+    @property
+    def mealy(self):
+       return self.get("mealy")
+
+    @mealy.setter
+    def mealy(self, new_value):
+       self.mealy = new_value
+
+    @property
+    def length_cm(self):
+       return self.get("length_cm")
+
+    @length_cm.setter
+    def length_cm(self, new_value):
+       self.length_cm = new_value
+
+    @property
+    def sweet(self):
+       return self.get("sweet")
+
+    @sweet.setter
+    def sweet(self, new_value):
+       self.sweet = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -98,6 +130,7 @@ class FruitReq(ModelComposed):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -185,7 +218,7 @@ class FruitReq(ModelComposed):
             '_visited_composed_classes': self._visited_composed_classes,
         }
         composed_info = validate_get_composed_info(
-            constant_args, kwargs, self)
+            constant_args, kwargs, self, from_openapi_data=True)
         self._composed_instances = composed_info[0]
         self._var_name_to_model_instances = composed_info[1]
         self._additional_properties_model_instances = composed_info[2]
@@ -202,7 +235,11 @@ class FruitReq(ModelComposed):
 
         return self
 
-    required_properties = set([
+
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -303,6 +340,7 @@ class FruitReq(ModelComposed):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+
 
     @cached_property
     def _composed_schemas():

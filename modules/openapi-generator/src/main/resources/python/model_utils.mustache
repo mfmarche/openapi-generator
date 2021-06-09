@@ -225,7 +225,7 @@ class OpenApiModel(object):
             self_inst.__init__(*args, **kwargs)
 
         new_inst = new_cls.__new__(new_cls, *args, **kwargs)
-        new_inst.__init__(*args, **kwargs)
+        new_inst = new_inst._from_openapi_data(*args, **kwargs)
         return new_inst
 
 

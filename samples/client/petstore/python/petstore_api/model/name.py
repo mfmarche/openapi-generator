@@ -60,6 +60,38 @@ class Name(ModelNormal):
     validations = {
     }
 
+    @property
+    def name(self):
+       return self.get("name")
+
+    @name.setter
+    def name(self, new_value):
+       self.name = new_value
+
+    @property
+    def snake_case(self):
+       return self.get("snake_case")
+
+    @snake_case.setter
+    def snake_case(self, new_value):
+       self.snake_case = new_value
+
+    @property
+    def _property(self):
+       return self.get("_property")
+
+    @_property.setter
+    def _property(self, new_value):
+       self._property = new_value
+
+    @property
+    def _123_number(self):
+       return self.get("_123_number")
+
+    @_123_number.setter
+    def _123_number(self, new_value):
+       self._123_number = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -90,6 +122,7 @@ class Name(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -186,7 +219,10 @@ class Name(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -273,3 +309,4 @@ class Name(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

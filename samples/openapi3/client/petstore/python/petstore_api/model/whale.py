@@ -60,6 +60,30 @@ class Whale(ModelNormal):
     validations = {
     }
 
+    @property
+    def has_baleen(self):
+       return self.get("has_baleen")
+
+    @has_baleen.setter
+    def has_baleen(self, new_value):
+       self.has_baleen = new_value
+
+    @property
+    def has_teeth(self):
+       return self.get("has_teeth")
+
+    @has_teeth.setter
+    def has_teeth(self, new_value):
+       self.has_teeth = new_value
+
+    @property
+    def class_name(self):
+       return self.get("class_name")
+
+    @class_name.setter
+    def class_name(self, new_value):
+       self.class_name = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -89,6 +113,7 @@ class Whale(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -181,7 +206,10 @@ class Whale(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -267,3 +295,4 @@ class Whale(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+

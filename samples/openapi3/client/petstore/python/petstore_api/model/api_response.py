@@ -60,6 +60,30 @@ class ApiResponse(ModelNormal):
     validations = {
     }
 
+    @property
+    def code(self):
+       return self.get("code")
+
+    @code.setter
+    def code(self, new_value):
+       self.code = new_value
+
+    @property
+    def type(self):
+       return self.get("type")
+
+    @type.setter
+    def type(self, new_value):
+       self.type = new_value
+
+    @property
+    def message(self):
+       return self.get("message")
+
+    @message.setter
+    def message(self, new_value):
+       self.message = new_value
+
     @cached_property
     def additional_properties_type():
         """
@@ -89,6 +113,7 @@ class ApiResponse(ModelNormal):
     @cached_property
     def discriminator():
         return None
+
 
 
     attribute_map = {
@@ -178,7 +203,10 @@ class ApiResponse(ModelNormal):
             setattr(self, var_name, var_value)
         return self
 
-    required_properties = set([
+    def __python_set(val):
+        return set(val)
+ 
+    required_properties = __python_set([
         '_data_store',
         '_check_type',
         '_spec_property_naming',
@@ -261,3 +289,4 @@ class ApiResponse(ModelNormal):
             if var_name in self.read_only_vars:
                 raise ApiAttributeError(f"`{var_name}` is a read-only attribute. Use `from_openapi_data` to instantiate "
                                      f"class with read only attributes.")
+
