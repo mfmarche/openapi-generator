@@ -1335,6 +1335,11 @@ def model_to_dict(model_instance, serialize=True):
     """
     result = {}
 
+    if isinstance(model_instance, dict):
+        # Short-circuit the check here if the model was itself a dict. We can't assume
+        # the existence of extended attributes in this case
+        return _model_to_dict_for_dict(model_instance, serialize=serialize)
+
     model_instances = [model_instance]
     if model_instance._composed_schemas:
         model_instances.extend(model_instance._composed_instances)
@@ -1367,12 +1372,7 @@ def model_to_dict(model_instance, serialize=True):
                            res.append(model_to_dict(v, serialize=serialize))
                    result[attr] = res
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0],
-                                  model_to_dict(item[1], serialize=serialize))
-                    if hasattr(item[1], '_data_store') else item,
-                    value.items()
-                ))
+                result[attr] = _model_to_dict_for_dict(value, serialize=serialize)
             elif isinstance(value, ModelSimple):
                 result[attr] = value.value
             elif hasattr(value, '_data_store'):
@@ -1699,3 +1699,11 @@ def validate_get_composed_info(constant_args, model_args, self, from_openapi_dat
       additional_properties_model_instances,
       discarded_args
     ]
+
+def _model_to_dict_for_dict(model_instance, serialize):
+    return dict(map(
+        lambda item: (item[0],
+                      model_to_dict(item[1], serialize=serialize))
+        if hasattr(item[1], '_data_store') else item,
+        model_instance.items()
+    ))
